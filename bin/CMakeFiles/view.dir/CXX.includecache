@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/model.hpp
+
+../include/view.hpp
+model.hpp
+../include/model.hpp
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
+
+/home/mariana/Documentos/ea872/aula4/src/view.cpp
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
+memory
+-
+iostream
+-
+model.hpp
+/home/mariana/Documentos/ea872/aula4/src/model.hpp
+view.hpp
+/home/mariana/Documentos/ea872/aula4/src/view.hpp
+

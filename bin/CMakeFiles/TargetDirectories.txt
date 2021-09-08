@@ -1,0 +1,6 @@
+/home/mariana/Documentos/ea872/aula4/bin/CMakeFiles/rebuild_cache.dir
+/home/mariana/Documentos/ea872/aula4/bin/CMakeFiles/edit_cache.dir
+/home/mariana/Documentos/ea872/aula4/bin/CMakeFiles/controller.dir
+/home/mariana/Documentos/ea872/aula4/bin/CMakeFiles/view.dir
+/home/mariana/Documentos/ea872/aula4/bin/CMakeFiles/model.dir
+/home/mariana/Documentos/ea872/aula4/bin/CMakeFiles/MeuJogo.dir
