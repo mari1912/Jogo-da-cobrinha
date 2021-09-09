@@ -40,9 +40,9 @@ View::View(std::shared_ptr<Model>model){
 
     // Carregando texturas
     // personagem
-    texture = IMG_LoadTexture(renderer, "./assets/capi.png");
+    texture = IMG_LoadTexture(renderer, "../assets/capi.png");
     // fundo
-    texture2 = IMG_LoadTexture(renderer, "./assets/park.jpeg");
+    texture2 = IMG_LoadTexture(renderer, "../assets/park.jpeg");
 
     // Quadrado onde a textura sera desenhada
     target.x = 0;
