@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/MeuJogo.dir/src/main.cpp.o  -o MeuJogo  libmodel.a libview.a libcontroller.a -lSDL2 -lSDL2_image 

@@ -9,8 +9,6 @@
 ../include/controller.hpp
 model.hpp
 ../include/model.hpp
-view.hpp
-../include/view.hpp
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
@@ -18,15 +16,7 @@ SDL2/SDL_image.h
 
 ../include/model.hpp
 
-../include/view.hpp
-model.hpp
-../include/model.hpp
-SDL2/SDL.h
--
-SDL2/SDL_image.h
--
-
-/home/mariana/Documentos/ea872/aula4/src/controller.cpp
+/home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/src/controller.cpp
 memory
 -
 SDL2/SDL.h
@@ -34,9 +24,7 @@ SDL2/SDL.h
 SDL2/SDL_image.h
 -
 model.hpp
-/home/mariana/Documentos/ea872/aula4/src/model.hpp
-view.hpp
-/home/mariana/Documentos/ea872/aula4/src/view.hpp
+/home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/src/model.hpp
 controller.hpp
-/home/mariana/Documentos/ea872/aula4/src/controller.hpp
+/home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/src/controller.hpp
 

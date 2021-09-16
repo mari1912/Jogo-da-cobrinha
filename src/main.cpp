@@ -9,13 +9,13 @@
 int main() {
 
     std::shared_ptr<Model>modelo(new Model(50, 15, 0.1, 1, 5, 2));
-    std::shared_ptr<View>view(new View(modelo));
-    std::shared_ptr<Controller>controle_sistema(new Controller(modelo, view));
+    std::shared_ptr<Controller>controle_sistema(new Controller(modelo));
+    std::shared_ptr<View>view(new View(modelo, controle_sistema));
     
     for (int i=0; i<1000; i++) {
-        controle_sistema->roda_jogo();        
+        view->atualiza();        
     }   
-    controle_sistema->finaliza();
+    view->finaliza();
     
     return 0;
 }

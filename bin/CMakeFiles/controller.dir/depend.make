@@ -3,6 +3,5 @@
 
 CMakeFiles/controller.dir/src/controller.cpp.o: ../include/controller.hpp
 CMakeFiles/controller.dir/src/controller.cpp.o: ../include/model.hpp
-CMakeFiles/controller.dir/src/controller.cpp.o: ../include/view.hpp
 CMakeFiles/controller.dir/src/controller.cpp.o: ../src/controller.cpp
 

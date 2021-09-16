@@ -4,10 +4,12 @@
 #include <iostream>
 #include "model.hpp"
 #include "view.hpp"
+#include "controller.hpp"
 
 //Construtor
-View::View(std::shared_ptr<Model>model){ 
+View::View(std::shared_ptr<Model>model, std::shared_ptr<Controller>controller){ 
     this->model = model;
+    this->controller = controller;
 
     // Inicializando o subsistema de video do SDL
     if ( SDL_Init (SDL_INIT_VIDEO) < 0 ) {
@@ -48,9 +50,58 @@ View::View(std::shared_ptr<Model>model){
     target.x = 0;
     target.y = 0;
     SDL_QueryTexture(texture, nullptr, nullptr, &target.w, &target.h);
+    rodando = true;
+    state = SDL_GetKeyboardState(nullptr);
+}
+
+void View::atualiza() {
+
+    float x;
+
+    // Laco principal do jogo
+    while(rodando) {
+        // Polling de eventos
+
+        x = controller->calcula_posicao();
+        target.x += x;
+
+        SDL_PumpEvents(); // atualiza estado do teclado
+        if (state[SDL_SCANCODE_UP]) target.y -= 1;
+        if (state[SDL_SCANCODE_DOWN]) target.y += 1;
+
+        while (SDL_PollEvent(&evento)) {
+            if (evento.type == SDL_QUIT) {
+                rodando = false;
+            }
+            // Exemplos de outros eventos.
+            // Que outros eventos poderiamos ter e que sao uteis?
+            //if (evento.type == SDL_KEYDOWN) {
+            //}
+            //if (evento.type == SDL_MOUSEBUTTONDOWN) {
+            //}
+        }
+
+        // Desenhar a cena
+        SDL_RenderClear(renderer);
+        SDL_RenderCopy(renderer, texture2, nullptr, nullptr);
+        SDL_RenderCopy(renderer, texture, nullptr, &target);
+        SDL_RenderPresent(renderer);
+
+        // Delay para diminuir o framerate
+        SDL_Delay(10);
+  }
 
 }
 
+void View::finaliza() {
+    SDL_DestroyTexture(texture);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+}
+
+
+/*
 //Permite acessar dados
 SDL_Rect View::get_target() {
     return target;
@@ -76,3 +127,4 @@ SDL_Window* View::get_window() {
 void View::set_target(SDL_Rect new_target) {
     target = new_target;
 }
+*/
