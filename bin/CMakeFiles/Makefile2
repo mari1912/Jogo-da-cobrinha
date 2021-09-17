@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha
+CMAKE_SOURCE_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin
+CMAKE_BINARY_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -80,14 +80,14 @@ clean: CMakeFiles/MeuJogo.dir/clean
 CMakeFiles/controller.dir/all:
 	$(MAKE) -f CMakeFiles/controller.dir/build.make CMakeFiles/controller.dir/depend
 	$(MAKE) -f CMakeFiles/controller.dir/build.make CMakeFiles/controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=3,4 "Built target controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=3,4 "Built target controller"
 .PHONY : CMakeFiles/controller.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/controller.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/controller.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 0
 .PHONY : CMakeFiles/controller.dir/rule
 
 # Convenience name for target.
@@ -107,14 +107,14 @@ CMakeFiles/controller.dir/clean:
 CMakeFiles/view.dir/all:
 	$(MAKE) -f CMakeFiles/view.dir/build.make CMakeFiles/view.dir/depend
 	$(MAKE) -f CMakeFiles/view.dir/build.make CMakeFiles/view.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=7,8 "Built target view"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=7,8 "Built target view"
 .PHONY : CMakeFiles/view.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/view.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/view.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 0
 .PHONY : CMakeFiles/view.dir/rule
 
 # Convenience name for target.
@@ -134,14 +134,14 @@ CMakeFiles/view.dir/clean:
 CMakeFiles/model.dir/all:
 	$(MAKE) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/depend
 	$(MAKE) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=5,6 "Built target model"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=5,6 "Built target model"
 .PHONY : CMakeFiles/model.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/model.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/model.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 0
 .PHONY : CMakeFiles/model.dir/rule
 
 # Convenience name for target.
@@ -158,19 +158,19 @@ CMakeFiles/model.dir/clean:
 # Target rules for target CMakeFiles/MeuJogo.dir
 
 # All Build rule for target.
+CMakeFiles/MeuJogo.dir/all: CMakeFiles/model.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/controller.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/view.dir/all
-CMakeFiles/MeuJogo.dir/all: CMakeFiles/model.dir/all
 	$(MAKE) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/depend
 	$(MAKE) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=1,2 "Built target MeuJogo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=1,2 "Built target MeuJogo"
 .PHONY : CMakeFiles/MeuJogo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MeuJogo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MeuJogo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 0
 .PHONY : CMakeFiles/MeuJogo.dir/rule
 
 # Convenience name for target.

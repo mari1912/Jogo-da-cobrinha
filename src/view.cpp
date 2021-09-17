@@ -41,50 +41,70 @@ View::View(std::shared_ptr<Model>model, std::shared_ptr<Controller>controller){
     }
 
     // Carregando texturas
-    // personagem
+    // personagem: em aspas esta o endereco da figura na pasta, no caso vai carregar a capivara
     texture = IMG_LoadTexture(renderer, "../assets/capi.png");
-    // fundo
+    // fundo: em aspas esta o endereco da figura na pasta, vai carregar o parque
     texture2 = IMG_LoadTexture(renderer, "../assets/park.jpeg");
 
     // Quadrado onde a textura sera desenhada
-    target.x = 0;
-    target.y = 0;
+    //Especifica onde a imagem da capivara deve ser desenhada
+    target.x = model->get_x_atual();
+    target.y = model->get_y_atual();
     SDL_QueryTexture(texture, nullptr, nullptr, &target.w, &target.h);
     rodando = true;
     state = SDL_GetKeyboardState(nullptr);
 }
 
-void View::atualiza() {
-
-    float x;
+void View::atualiza_desenho() {
 
     // Laco principal do jogo
     while(rodando) {
+
         // Polling de eventos
-
-        x = controller->calcula_posicao();
-        target.x += x;
-
         SDL_PumpEvents(); // atualiza estado do teclado
-        if (state[SDL_SCANCODE_UP]) target.y -= 1;
-        if (state[SDL_SCANCODE_DOWN]) target.y += 1;
+        
+        //Se clicar na seta para cima
+        if (state[SDL_SCANCODE_UP]) {
+            model->set_vy(-1);
+            model->set_vx(0);
+            controller->calcula_y_cobrinha();  
+        } 
 
+        //Se clicar na seta para baixo
+        if (state[SDL_SCANCODE_DOWN]) {
+            model->set_vy(1);
+            model->set_vx(0);
+            controller->calcula_y_cobrinha();
+        } 
+
+        //Se clicar na seta esquerda
+        if (state[SDL_SCANCODE_LEFT]) {
+            model->set_vx(-1);
+            model->set_vy(0);
+            controller->calcula_x_cobrinha();
+        } 
+
+        //Se clicar na seta direita
+        if (state[SDL_SCANCODE_RIGHT]) {
+            model->set_vx(1);
+            model->set_vy(0);
+            controller->calcula_x_cobrinha();
+        } 
+
+        //atualiza o local do personagem
+        target.x += model->get_vx();
+        target.y += model->get_vy();
+        
         while (SDL_PollEvent(&evento)) {
             if (evento.type == SDL_QUIT) {
                 rodando = false;
             }
-            // Exemplos de outros eventos.
-            // Que outros eventos poderiamos ter e que sao uteis?
-            //if (evento.type == SDL_KEYDOWN) {
-            //}
-            //if (evento.type == SDL_MOUSEBUTTONDOWN) {
-            //}
         }
 
         // Desenhar a cena
         SDL_RenderClear(renderer);
-        SDL_RenderCopy(renderer, texture2, nullptr, nullptr);
-        SDL_RenderCopy(renderer, texture, nullptr, &target);
+        SDL_RenderCopy(renderer, texture2, nullptr, nullptr);   //desenha o parque, que e fixo
+        SDL_RenderCopy(renderer, texture, nullptr, &target);    //desenha a capivara, que e movel
         SDL_RenderPresent(renderer);
 
         // Delay para diminuir o framerate
@@ -100,31 +120,3 @@ void View::finaliza() {
     SDL_Quit();
 }
 
-
-/*
-//Permite acessar dados
-SDL_Rect View::get_target() {
-    return target;
-}
-
-SDL_Renderer* View::get_renderer() { 
-    return renderer;
-}
-
-SDL_Texture* View::get_texture() {
-    return texture;
-}
-
-SDL_Texture* View::get_texture2() {
-    return texture2;
-}
-
-SDL_Window* View::get_window() {
-    return window;
-}
-
-//Permite alterar dado
-void View::set_target(SDL_Rect new_target) {
-    target = new_target;
-}
-*/

@@ -9,13 +9,16 @@ Controller::Controller(std::shared_ptr<Model>model) {
     this->model = model;
 }
 
-//Calcula a proxima posicao
-float Controller::calcula_posicao() {
+//calcula a posicao horizontal da cobrinha
+void Controller::calcula_x_cobrinha() {
+    float x_cobrinha;
+    x_cobrinha = model->get_x_atual() + model->get_dt() * model->get_vx();
+    model->set_x_atual(x_cobrinha);
+}
 
-    forca = -(model->get_x_atual())*(model->get_k()) - (model->get_v_atual())*(model->get_b());
-    model->set_aceleracao(forca/(model->get_massa()));
-    model->set_v_atual(model->get_v_atual()+model->get_aceleracao()*model->get_dt());
-    model->set_x_atual(model->get_x_atual()+model->get_v_atual()*model->get_dt());   
-    
-    return model->get_x_atual();
+//calcula a posicao vertical da cobrinha
+void Controller::calcula_y_cobrinha() {
+    float y_cobrinha;
+    y_cobrinha = model->get_y_atual() + model->get_dt() * model->get_vy();
+    model->set_y_atual(y_cobrinha);
 }

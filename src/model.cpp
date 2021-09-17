@@ -1,56 +1,47 @@
 #include "model.hpp"
 
 //Construtor
-Model::Model(float x0, float v0, float dt, float massa, float k, float b) {
-    this->x0 = x0;
-    this->v0 = v0;
-    this->dt = dt;
-    this->massa = massa;
-    this->k = k;
-    this->b = b;
-    x_atual = x0;
-    v_atual = v0;
-    aceleracao = 0;
+Model::Model(float x_atual, float vx, float y_atual, float vy) {
+    this->x_atual = x_atual;
+    this->vx = vx;
+    this->y_atual = y_atual;
+    this->vy = vy;
 }
 
-//Permite acesso aos dados
-float Model::get_x_atual(){
+//permite passar os atributos
+float Model::get_x_atual() {
     return x_atual;
 }
 
-float Model::get_v_atual(){
-    return v_atual;
+float Model::get_vx() {
+    return vx;
 }
 
-float Model::get_aceleracao(){
-    return aceleracao;
+float Model::get_y_atual() {
+    return y_atual;
 }
 
-float Model::get_k(){
-    return k;
+float Model::get_vy() {
+    return vy;
 }
 
-float Model::get_b(){
-    return b;
-}
-
-float Model::get_massa() {
-    return massa;
-}
-
-float Model::get_dt(){
+float Model::get_dt() {
     return dt;
 }
 
-//Permite alterar os dados
-void Model::set_x_atual(float x_novo){
+//permite atualizar os atributos
+void Model::set_x_atual(float x_novo) {
     x_atual = x_novo;
 }
 
-void Model::set_v_atual(float v_novo){
-    v_atual = v_novo;
+void Model::set_vx(float vx_novo) {
+    vx = vx_novo;
 }
 
-void Model::set_aceleracao(float aceleracao_novo){
-    aceleracao = aceleracao_novo;
+void Model::set_y_atual(float y_novo) {
+    y_atual = y_novo;
+}
+
+void Model::set_vy(float vy_novo) {
+    vy = vy_novo;
 }

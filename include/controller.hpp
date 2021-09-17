@@ -8,10 +8,9 @@ class Controller {
 
     private:
         std::shared_ptr<Model>model;
-        float forca;
 
     public:
-        Controller(std::shared_ptr<Model>model);
-        float calcula_posicao();
-        void roda_jogo();
+        Controller(std::shared_ptr<Model>model);    //construtor
+        void calcula_x_cobrinha();                  //calcula posicao horinzontal da cobrinha
+        void calcula_y_cobrinha();                  //calcula posicao vertical da cobrinha
 };

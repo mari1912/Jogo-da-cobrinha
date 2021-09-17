@@ -1,4 +1,4 @@
-# Install script for directory: /home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha
+# Install script for directory: /home/mariana/Documentos/ea872/Jogo-da-cobrinha
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mariana/Documentos/ea872/aula4/Jogo-da-cobrinha/bin/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
