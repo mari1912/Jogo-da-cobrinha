@@ -42,9 +42,9 @@ View::View(std::shared_ptr<Model>model, std::shared_ptr<Controller>controller){
 
     // Carregando texturas
     // personagem: em aspas esta o endereco da figura na pasta, no caso vai carregar a capivara
-    texture = IMG_LoadTexture(renderer, "../assets/capi.png");
+    texture = IMG_LoadTexture(renderer, "../assets/littlesnake.png");
     // fundo: em aspas esta o endereco da figura na pasta, vai carregar o parque
-    texture2 = IMG_LoadTexture(renderer, "../assets/park.jpeg");
+    texture2 = IMG_LoadTexture(renderer, "../assets/tabuleiro.jpeg");
 
     // Quadrado onde a textura sera desenhada
     //Especifica onde a imagem da capivara deve ser desenhada
