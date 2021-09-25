@@ -67,31 +67,35 @@ void View::atualiza_desenho() {
         if (state[SDL_SCANCODE_UP]) {
             model->set_vy(-1);
             model->set_vx(0);
-            controller->calcula_y_cobrinha();  
+           // controller->calcula_y_cobrinha();  
         } 
 
         //Se clicar na seta para baixo
         if (state[SDL_SCANCODE_DOWN]) {
             model->set_vy(1);
             model->set_vx(0);
-            controller->calcula_y_cobrinha();
+            //controller->calcula_y_cobrinha();
         } 
 
         //Se clicar na seta esquerda
         if (state[SDL_SCANCODE_LEFT]) {
             model->set_vx(-1);
             model->set_vy(0);
-            controller->calcula_x_cobrinha();
+            //controller->calcula_x_cobrinha();
         } 
 
         //Se clicar na seta direita
         if (state[SDL_SCANCODE_RIGHT]) {
             model->set_vx(1);
             model->set_vy(0);
-            controller->calcula_x_cobrinha();
+            //controller->calcula_x_cobrinha();
         } 
+        controller -> calcula_x_cobrinha();
+        controller -> calcula_y_cobrinha();
+        controller -> calcula_posicao();
 
         //atualiza o local do personagem
+            
         target.x += model->get_vx();
         target.y += model->get_vy();
         
