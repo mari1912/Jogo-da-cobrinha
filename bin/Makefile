@@ -137,6 +137,32 @@ view/fast:
 .PHONY : view/fast
 
 #=============================================================================
+# Target rules for targets named tabuleiro
+
+# Build rule for target.
+tabuleiro: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tabuleiro
+.PHONY : tabuleiro
+
+# fast build rule for target.
+tabuleiro/fast:
+	$(MAKE) -f CMakeFiles/tabuleiro.dir/build.make CMakeFiles/tabuleiro.dir/build
+.PHONY : tabuleiro/fast
+
+#=============================================================================
+# Target rules for targets named fruta
+
+# Build rule for target.
+fruta: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fruta
+.PHONY : fruta
+
+# fast build rule for target.
+fruta/fast:
+	$(MAKE) -f CMakeFiles/fruta.dir/build.make CMakeFiles/fruta.dir/build
+.PHONY : fruta/fast
+
+#=============================================================================
 # Target rules for targets named model
 
 # Build rule for target.
@@ -150,6 +176,19 @@ model/fast:
 .PHONY : model/fast
 
 #=============================================================================
+# Target rules for targets named cobra
+
+# Build rule for target.
+cobra: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cobra
+.PHONY : cobra
+
+# fast build rule for target.
+cobra/fast:
+	$(MAKE) -f CMakeFiles/cobra.dir/build.make CMakeFiles/cobra.dir/build
+.PHONY : cobra/fast
+
+#=============================================================================
 # Target rules for targets named MeuJogo
 
 # Build rule for target.
@@ -161,6 +200,33 @@ MeuJogo: cmake_check_build_system
 MeuJogo/fast:
 	$(MAKE) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/build
 .PHONY : MeuJogo/fast
+
+src/cobra.o: src/cobra.cpp.o
+
+.PHONY : src/cobra.o
+
+# target to build an object file
+src/cobra.cpp.o:
+	$(MAKE) -f CMakeFiles/cobra.dir/build.make CMakeFiles/cobra.dir/src/cobra.cpp.o
+.PHONY : src/cobra.cpp.o
+
+src/cobra.i: src/cobra.cpp.i
+
+.PHONY : src/cobra.i
+
+# target to preprocess a source file
+src/cobra.cpp.i:
+	$(MAKE) -f CMakeFiles/cobra.dir/build.make CMakeFiles/cobra.dir/src/cobra.cpp.i
+.PHONY : src/cobra.cpp.i
+
+src/cobra.s: src/cobra.cpp.s
+
+.PHONY : src/cobra.s
+
+# target to generate assembly for a file
+src/cobra.cpp.s:
+	$(MAKE) -f CMakeFiles/cobra.dir/build.make CMakeFiles/cobra.dir/src/cobra.cpp.s
+.PHONY : src/cobra.cpp.s
 
 src/controller.o: src/controller.cpp.o
 
@@ -188,6 +254,33 @@ src/controller.s: src/controller.cpp.s
 src/controller.cpp.s:
 	$(MAKE) -f CMakeFiles/controller.dir/build.make CMakeFiles/controller.dir/src/controller.cpp.s
 .PHONY : src/controller.cpp.s
+
+src/fruta.o: src/fruta.cpp.o
+
+.PHONY : src/fruta.o
+
+# target to build an object file
+src/fruta.cpp.o:
+	$(MAKE) -f CMakeFiles/fruta.dir/build.make CMakeFiles/fruta.dir/src/fruta.cpp.o
+.PHONY : src/fruta.cpp.o
+
+src/fruta.i: src/fruta.cpp.i
+
+.PHONY : src/fruta.i
+
+# target to preprocess a source file
+src/fruta.cpp.i:
+	$(MAKE) -f CMakeFiles/fruta.dir/build.make CMakeFiles/fruta.dir/src/fruta.cpp.i
+.PHONY : src/fruta.cpp.i
+
+src/fruta.s: src/fruta.cpp.s
+
+.PHONY : src/fruta.s
+
+# target to generate assembly for a file
+src/fruta.cpp.s:
+	$(MAKE) -f CMakeFiles/fruta.dir/build.make CMakeFiles/fruta.dir/src/fruta.cpp.s
+.PHONY : src/fruta.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -243,6 +336,33 @@ src/model.cpp.s:
 	$(MAKE) -f CMakeFiles/model.dir/build.make CMakeFiles/model.dir/src/model.cpp.s
 .PHONY : src/model.cpp.s
 
+src/tabuleiro.o: src/tabuleiro.cpp.o
+
+.PHONY : src/tabuleiro.o
+
+# target to build an object file
+src/tabuleiro.cpp.o:
+	$(MAKE) -f CMakeFiles/tabuleiro.dir/build.make CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.o
+.PHONY : src/tabuleiro.cpp.o
+
+src/tabuleiro.i: src/tabuleiro.cpp.i
+
+.PHONY : src/tabuleiro.i
+
+# target to preprocess a source file
+src/tabuleiro.cpp.i:
+	$(MAKE) -f CMakeFiles/tabuleiro.dir/build.make CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.i
+.PHONY : src/tabuleiro.cpp.i
+
+src/tabuleiro.s: src/tabuleiro.cpp.s
+
+.PHONY : src/tabuleiro.s
+
+# target to generate assembly for a file
+src/tabuleiro.cpp.s:
+	$(MAKE) -f CMakeFiles/tabuleiro.dir/build.make CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.s
+.PHONY : src/tabuleiro.cpp.s
+
 src/view.o: src/view.cpp.o
 
 .PHONY : src/view.o
@@ -280,17 +400,29 @@ help:
 	@echo "... edit_cache"
 	@echo "... controller"
 	@echo "... view"
+	@echo "... tabuleiro"
+	@echo "... fruta"
 	@echo "... model"
+	@echo "... cobra"
 	@echo "... MeuJogo"
+	@echo "... src/cobra.o"
+	@echo "... src/cobra.i"
+	@echo "... src/cobra.s"
 	@echo "... src/controller.o"
 	@echo "... src/controller.i"
 	@echo "... src/controller.s"
+	@echo "... src/fruta.o"
+	@echo "... src/fruta.i"
+	@echo "... src/fruta.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/model.o"
 	@echo "... src/model.i"
 	@echo "... src/model.s"
+	@echo "... src/tabuleiro.o"
+	@echo "... src/tabuleiro.i"
+	@echo "... src/tabuleiro.s"
 	@echo "... src/view.o"
 	@echo "... src/view.i"
 	@echo "... src/view.s"

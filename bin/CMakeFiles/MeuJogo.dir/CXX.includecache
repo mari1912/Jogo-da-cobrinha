@@ -6,19 +6,31 @@
 
 #IncludeRegexTransform: 
 
+../include/cobra.hpp
+
 ../include/controller.hpp
-model.hpp
-../include/model.hpp
+cobra.hpp
+../include/cobra.hpp
+fruta.hpp
+../include/fruta.hpp
+tabuleiro.hpp
+../include/tabuleiro.hpp
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
 -
 
-../include/model.hpp
+../include/fruta.hpp
+
+../include/tabuleiro.hpp
 
 ../include/view.hpp
-model.hpp
-../include/model.hpp
+cobra.hpp
+../include/cobra.hpp
+fruta.hpp
+../include/fruta.hpp
+tabuleiro.hpp
+../include/tabuleiro.hpp
 controller.hpp
 ../include/controller.hpp
 SDL2/SDL.h
@@ -35,8 +47,12 @@ iostream
 -
 memory
 -
-model.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/model.hpp
+cobra.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/cobra.hpp
+fruta.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/fruta.hpp
+tabuleiro.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/tabuleiro.hpp
 view.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/view.hpp
 controller.hpp

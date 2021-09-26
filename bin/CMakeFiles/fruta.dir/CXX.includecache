@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/fruta.hpp
+
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/fruta.cpp
+fruta.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/fruta.hpp
+

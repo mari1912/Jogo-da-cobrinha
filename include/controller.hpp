@@ -1,4 +1,6 @@
-#include "model.hpp"
+#include "cobra.hpp"
+#include "fruta.hpp"
+#include "tabuleiro.hpp"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
@@ -7,10 +9,15 @@
 class Controller {
 
     private:
-        std::shared_ptr<Model>model;
+        std::shared_ptr<Cobra>cobra;
+        std::shared_ptr<Fruta>fruta;
+        std::shared_ptr<Tabuleiro>tabuleiro;
 
     public:
-        Controller(std::shared_ptr<Model>model);    //construtor
+        Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Cobra>cobra, std::shared_ptr<Fruta>fruta);    //construtor
         void calcula_x_cobrinha();                  //calcula posicao horinzontal da cobrinha
         void calcula_y_cobrinha();                  //calcula posicao vertical da cobrinha
+        void verifica_posicao();                    //Não deixa a cobrinha sair do tabuleiro
+        void comeu();                               //vê se a cobrinha comeu a fruta
+        void posicao_fruta();                       //calcula a nova posição da fruta
 };

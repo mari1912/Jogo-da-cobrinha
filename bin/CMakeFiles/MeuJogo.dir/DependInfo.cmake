@@ -16,6 +16,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/model.dir/DependInfo.cmake"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/cobra.dir/DependInfo.cmake"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/fruta.dir/DependInfo.cmake"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/tabuleiro.dir/DependInfo.cmake"
   "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/view.dir/DependInfo.cmake"
   "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/controller.dir/DependInfo.cmake"
   )
