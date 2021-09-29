@@ -74,11 +74,21 @@ void View::render() {
     SDL_SetRenderDrawColor(renderer, 0x0A, 0x0A, 0x0A, 0xFF);
     SDL_RenderClear (renderer);
 
+/*
     //Desenha a cabeca da cobrinha
     SDL_SetRenderDrawColor (renderer, 0xFF, 0xFF, 0xFF, 0xFF);
     bloco.x = cobra->get_x_atual();
     bloco.y = cobra->get_y_atual();
     SDL_RenderFillRect(renderer, &bloco);
+*/
+    //std::cout<<cobra->get_cobrinha_horizontal().size()<<std::endl;
+    SDL_SetRenderDrawColor (renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+    for (int i = 0; i < cobra->get_cobrinha_horizontal().size(); i++) {
+    //    std::cout<<i<<std::endl;
+        bloco.x = cobra->get_cobrinha_horizontal()[i];
+        bloco.y = cobra->get_cobrinha_vertical()[i];
+        SDL_RenderFillRect(renderer, &bloco);
+    }
 
     //Desenha a fruta
     SDL_SetRenderDrawColor(renderer, 0xFF, 0x2F, 0x4E, 0xFF);
@@ -99,28 +109,28 @@ void View::atualiza_desenho() {
         
         //Se clicar na seta para cima
         if (state[SDL_SCANCODE_UP]) {
-            cobra->set_vy(-1);
+            cobra->set_vy(-0.1);
             cobra->set_vx(0);
            // controller->calcula_y_cobrinha();  
         } 
 
         //Se clicar na seta para baixo
         if (state[SDL_SCANCODE_DOWN]) {
-            cobra->set_vy(1);
+            cobra->set_vy(0.1);
             cobra->set_vx(0);
             //controller->calcula_y_cobrinha();
         } 
 
         //Se clicar na seta esquerda
         if (state[SDL_SCANCODE_LEFT]) {
-            cobra->set_vx(-1);
+            cobra->set_vx(-0.1);
             cobra->set_vy(0);
             //controller->calcula_x_cobrinha();
         } 
 
         //Se clicar na seta direita
         if (state[SDL_SCANCODE_RIGHT]) {
-            cobra->set_vx(1);
+            cobra->set_vx(0.1);
             cobra->set_vy(0);
             //controller->calcula_x_cobrinha();
         } 

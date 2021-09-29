@@ -3,7 +3,7 @@
 //Construtor
 Fruta::Fruta() {
     //Posição inicial da frutinha
-    x_fruta = 50;
+    x_fruta = 100;
     y_fruta = 0;
 }
 
