@@ -1,6 +1,7 @@
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/rebuild_cache.dir
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/edit_cache.dir
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/controller.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/teclado.dir
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/view.dir
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/tabuleiro.dir
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/fruta.dir

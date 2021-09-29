@@ -6,5 +6,6 @@ CMakeFiles/MeuJogo.dir/src/main.cpp.o
  ../include/controller.hpp
  ../include/fruta.hpp
  ../include/tabuleiro.hpp
+ ../include/teclado.hpp
  ../include/view.hpp
  /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/main.cpp

@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin
 
 # The main recursive "all" target.
 all: CMakeFiles/controller.dir/all
+all: CMakeFiles/teclado.dir/all
 all: CMakeFiles/view.dir/all
 all: CMakeFiles/tabuleiro.dir/all
 all: CMakeFiles/fruta.dir/all
@@ -70,6 +71,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/controller.dir/clean
+clean: CMakeFiles/teclado.dir/clean
 clean: CMakeFiles/view.dir/clean
 clean: CMakeFiles/tabuleiro.dir/clean
 clean: CMakeFiles/fruta.dir/clean
@@ -107,13 +109,40 @@ CMakeFiles/controller.dir/clean:
 .PHONY : CMakeFiles/controller.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/teclado.dir
+
+# All Build rule for target.
+CMakeFiles/teclado.dir/all:
+	$(MAKE) -f CMakeFiles/teclado.dir/build.make CMakeFiles/teclado.dir/depend
+	$(MAKE) -f CMakeFiles/teclado.dir/build.make CMakeFiles/teclado.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=13,14 "Built target teclado"
+.PHONY : CMakeFiles/teclado.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/teclado.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/teclado.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 0
+.PHONY : CMakeFiles/teclado.dir/rule
+
+# Convenience name for target.
+teclado: CMakeFiles/teclado.dir/rule
+
+.PHONY : teclado
+
+# clean rule for target.
+CMakeFiles/teclado.dir/clean:
+	$(MAKE) -f CMakeFiles/teclado.dir/build.make CMakeFiles/teclado.dir/clean
+.PHONY : CMakeFiles/teclado.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/view.dir
 
 # All Build rule for target.
 CMakeFiles/view.dir/all:
 	$(MAKE) -f CMakeFiles/view.dir/build.make CMakeFiles/view.dir/depend
 	$(MAKE) -f CMakeFiles/view.dir/build.make CMakeFiles/view.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=13,14 "Built target view"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=15,16 "Built target view"
 .PHONY : CMakeFiles/view.dir/all
 
 # Build rule for subdir invocation for target.
@@ -246,6 +275,7 @@ CMakeFiles/cobra.dir/clean:
 
 # All Build rule for target.
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/controller.dir/all
+CMakeFiles/MeuJogo.dir/all: CMakeFiles/teclado.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/view.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/tabuleiro.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/fruta.dir/all
@@ -258,7 +288,7 @@ CMakeFiles/MeuJogo.dir/all: CMakeFiles/cobra.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MeuJogo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MeuJogo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles 0
 .PHONY : CMakeFiles/MeuJogo.dir/rule

@@ -3,13 +3,35 @@
 #include <vector>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <cstdlib> 
 #include "controller.hpp"
 
 //Construtor
-Controller::Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Cobra>cobra, std::shared_ptr<Fruta>fruta) {
+Controller::Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Cobra>cobra, std::shared_ptr<Fruta>fruta, std::shared_ptr<Teclado>teclado) {
     this->tabuleiro = tabuleiro;
     this->cobra = cobra;
     this->fruta = fruta;
+    this->teclado = teclado;
+}
+
+void Controller::muda_posicao() {
+    int pos = teclado->le_teclado();
+    if (pos == 1) {
+        cobra->set_vy(-0.1);
+        cobra->set_vx(0);
+    }
+    else if (pos == -1) {
+        cobra->set_vy(0.1);
+        cobra->set_vx(0);
+    }
+    else if (pos == 2) {
+        cobra->set_vx(0.1);
+        cobra->set_vy(0);
+    }
+    else if (pos == -2) {
+        cobra->set_vx(-0.1);
+        cobra->set_vy(0);
+    }
 }
 
 //calcula a posicao horizontal da cobrinha
@@ -26,20 +48,29 @@ void Controller::calcula_y_cobrinha() {
     cobra->set_y_atual(y_cobrinha);
 }
 
-//verifica se a cobrinha está dentro do tabuleiro e se a cobrinha comeu a frutinha
+//verifica se a cobrinha está dentro do tabuleiro, se trombou e se a cobrinha comeu a frutinha
 void Controller::verifica_posicao(){
     if((tabuleiro->get_tabuleiro_vertical()-tabuleiro->get_bloco_vertical()) < cobra-> get_y_atual() || 0 > cobra-> get_y_atual()){
         cobra->set_vy(0);    
+        morreu();
     }
     if(tabuleiro->get_tabuleiro_horizontal()-tabuleiro->get_bloco_horizontal() < cobra->get_x_atual() || 0 > cobra->get_x_atual()){
         cobra->set_vx(0);
+        morreu();
+    }
+    for (int i = 1; i < cobra->get_cobrinha_horizontal().size(); i++) {
+        if (cobra->get_x_atual() == cobra->get_cobrinha_horizontal()[i]) {
+            if (cobra->get_y_atual() == cobra->get_cobrinha_vertical()[i]) {
+                morreu();
+            }
+        }
     }
     comeu();
 
 }
 
 void Controller::comeu() {
-    int tolerancia = 5; //tolerancia com relação a posição da cobra em relação a frutinha
+    int tolerancia = 10; //tolerancia com relação a posição da cobra em relação a frutinha
     
     //se estiver na mesma posição em relação a x 
     if ((fruta->get_x_fruta() <= cobra->get_x_atual() + tolerancia) && (fruta->get_x_fruta() >= cobra->get_x_atual() - tolerancia)) {
@@ -58,7 +89,7 @@ void Controller::comeu() {
 
 void Controller::posicao_fruta() {
     int x, y;
-    int tolerancia = 5;
+    int tolerancia = 10;
     //gera posições aleatórias dentro do tabuleiro
     x = rand() % tabuleiro->get_tabuleiro_horizontal()-tabuleiro->get_bloco_horizontal();
     y = rand() % tabuleiro->get_tabuleiro_vertical()-tabuleiro->get_bloco_vertical();
@@ -68,8 +99,11 @@ void Controller::posicao_fruta() {
             posicao_fruta();            
         }
     }
-    if (x < tabuleiro->get_bloco_horizontal() || y < tabuleiro->get_bloco_vertical()) {
-        posicao_fruta();
+    if (x < 0) {
+        x = x + 50;
+    } 
+    if (y < 0) {
+        y = y + 50;
     } 
     //atualiza a posição da frutinha
     fruta->set_x_fruta(x);
@@ -100,4 +134,11 @@ void Controller::anda() {
             cobra->set_cobrinha_vertical(i, cobra->get_cobrinha_vertical()[i-1]);
         }
     }
+}
+
+void Controller::morreu() {
+    cobra->set_vx(0);
+    cobra->set_vy(0);
+    std::cout<<"GAME OVER"<<std::endl;
+    //exit(0);
 }

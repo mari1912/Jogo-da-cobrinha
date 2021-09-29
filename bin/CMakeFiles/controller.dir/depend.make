@@ -5,5 +5,6 @@ CMakeFiles/controller.dir/src/controller.cpp.o: ../include/cobra.hpp
 CMakeFiles/controller.dir/src/controller.cpp.o: ../include/controller.hpp
 CMakeFiles/controller.dir/src/controller.cpp.o: ../include/fruta.hpp
 CMakeFiles/controller.dir/src/controller.cpp.o: ../include/tabuleiro.hpp
+CMakeFiles/controller.dir/src/controller.cpp.o: ../include/teclado.hpp
 CMakeFiles/controller.dir/src/controller.cpp.o: ../src/controller.cpp
 

@@ -124,6 +124,19 @@ controller/fast:
 .PHONY : controller/fast
 
 #=============================================================================
+# Target rules for targets named teclado
+
+# Build rule for target.
+teclado: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 teclado
+.PHONY : teclado
+
+# fast build rule for target.
+teclado/fast:
+	$(MAKE) -f CMakeFiles/teclado.dir/build.make CMakeFiles/teclado.dir/build
+.PHONY : teclado/fast
+
+#=============================================================================
 # Target rules for targets named view
 
 # Build rule for target.
@@ -363,6 +376,33 @@ src/tabuleiro.cpp.s:
 	$(MAKE) -f CMakeFiles/tabuleiro.dir/build.make CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.s
 .PHONY : src/tabuleiro.cpp.s
 
+src/teclado.o: src/teclado.cpp.o
+
+.PHONY : src/teclado.o
+
+# target to build an object file
+src/teclado.cpp.o:
+	$(MAKE) -f CMakeFiles/teclado.dir/build.make CMakeFiles/teclado.dir/src/teclado.cpp.o
+.PHONY : src/teclado.cpp.o
+
+src/teclado.i: src/teclado.cpp.i
+
+.PHONY : src/teclado.i
+
+# target to preprocess a source file
+src/teclado.cpp.i:
+	$(MAKE) -f CMakeFiles/teclado.dir/build.make CMakeFiles/teclado.dir/src/teclado.cpp.i
+.PHONY : src/teclado.cpp.i
+
+src/teclado.s: src/teclado.cpp.s
+
+.PHONY : src/teclado.s
+
+# target to generate assembly for a file
+src/teclado.cpp.s:
+	$(MAKE) -f CMakeFiles/teclado.dir/build.make CMakeFiles/teclado.dir/src/teclado.cpp.s
+.PHONY : src/teclado.cpp.s
+
 src/view.o: src/view.cpp.o
 
 .PHONY : src/view.o
@@ -399,6 +439,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... controller"
+	@echo "... teclado"
 	@echo "... view"
 	@echo "... tabuleiro"
 	@echo "... fruta"
@@ -423,6 +464,9 @@ help:
 	@echo "... src/tabuleiro.o"
 	@echo "... src/tabuleiro.i"
 	@echo "... src/tabuleiro.s"
+	@echo "... src/teclado.o"
+	@echo "... src/teclado.i"
+	@echo "... src/teclado.s"
 	@echo "... src/view.o"
 	@echo "... src/view.i"
 	@echo "... src/view.s"

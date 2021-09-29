@@ -17,6 +17,8 @@ fruta.hpp
 ../include/fruta.hpp
 tabuleiro.hpp
 ../include/tabuleiro.hpp
+teclado.hpp
+../include/teclado.hpp
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
@@ -25,6 +27,12 @@ SDL2/SDL_image.h
 ../include/fruta.hpp
 
 ../include/tabuleiro.hpp
+
+../include/teclado.hpp
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
 
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.cpp
 memory
@@ -36,6 +44,8 @@ vector
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
+-
+cstdlib
 -
 controller.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.hpp

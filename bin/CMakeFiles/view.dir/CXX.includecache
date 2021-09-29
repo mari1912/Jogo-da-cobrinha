@@ -17,6 +17,8 @@ fruta.hpp
 ../include/fruta.hpp
 tabuleiro.hpp
 ../include/tabuleiro.hpp
+teclado.hpp
+../include/teclado.hpp
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
@@ -28,6 +30,12 @@ SDL2/SDL_image.h
 
 ../include/tabuleiro.hpp
 
+../include/teclado.hpp
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
+
 ../include/view.hpp
 cobra.hpp
 ../include/cobra.hpp
@@ -37,6 +45,8 @@ tabuleiro.hpp
 ../include/tabuleiro.hpp
 controller.hpp
 ../include/controller.hpp
+teclado.hpp
+../include/teclado.hpp
 SDL2/SDL.h
 -
 SDL2/SDL_image.h

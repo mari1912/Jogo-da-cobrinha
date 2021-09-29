@@ -83,6 +83,7 @@ MeuJogo: libmodel.a
 MeuJogo: libcobra.a
 MeuJogo: libfruta.a
 MeuJogo: libtabuleiro.a
+MeuJogo: libteclado.a
 MeuJogo: libview.a
 MeuJogo: libcontroller.a
 MeuJogo: CMakeFiles/MeuJogo.dir/link.txt

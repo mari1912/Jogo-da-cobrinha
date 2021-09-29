@@ -11,15 +11,34 @@
 
 int main() {
 
+    bool rodando = true;
+    SDL_Event evento; // eventos discretos
     std::shared_ptr<Cobra>cobra(new Cobra(0,0.1,0,0));
     std::shared_ptr<Fruta>fruta(new Fruta());
     std::shared_ptr<Tabuleiro>tabuleiro(new Tabuleiro());
-    std::shared_ptr<Controller>controle_sistema(new Controller(tabuleiro, cobra, fruta));
-    std::shared_ptr<View>view(new View(cobra, fruta, tabuleiro, controle_sistema));
+    std::shared_ptr<Teclado>teclado(new Teclado());
+    std::shared_ptr<Controller>controller(new Controller(tabuleiro, cobra, fruta, teclado));
+    std::shared_ptr<View>view(new View(cobra, fruta, tabuleiro));
     
-    //for (int i=0; i<1000; i++) {
-        view->atualiza_desenho();        
-    //}   
+    while(rodando) {
+
+        controller->muda_posicao();
+        controller->calcula_x_cobrinha();
+        controller->calcula_y_cobrinha();
+        controller->verifica_posicao();
+
+        while (SDL_PollEvent(&evento)) {
+            if (evento.type == SDL_QUIT) {
+                rodando = false;
+            }
+        }
+        //coloca imagem na tela
+        view->render();
+
+        // Delay para diminuir o framerate
+        SDL_Delay(10);
+    }
+         
     view->finaliza();
     
     return 0;

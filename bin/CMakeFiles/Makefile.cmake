@@ -46,6 +46,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/controller.dir/DependInfo.cmake"
+  "CMakeFiles/teclado.dir/DependInfo.cmake"
   "CMakeFiles/view.dir/DependInfo.cmake"
   "CMakeFiles/tabuleiro.dir/DependInfo.cmake"
   "CMakeFiles/fruta.dir/DependInfo.cmake"
