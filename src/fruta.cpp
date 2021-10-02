@@ -1,9 +1,10 @@
 #include "fruta.hpp"
 
 //Construtor
-Fruta::Fruta() {
+Fruta::Fruta(std::shared_ptr<Tabuleiro>tabuleiro) {
     //Posição inicial da frutinha
-    x_fruta = 100;
+    this->tabuleiro = tabuleiro;
+    x_fruta = 10*tabuleiro->get_bloco_horizontal();
     y_fruta = 0;
 }
 

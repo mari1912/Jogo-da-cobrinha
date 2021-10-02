@@ -7,6 +7,12 @@
 #IncludeRegexTransform: 
 
 ../include/fruta.hpp
+tabuleiro.hpp
+../include/tabuleiro.hpp
+memory
+-
+
+../include/tabuleiro.hpp
 
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/fruta.cpp
 fruta.hpp

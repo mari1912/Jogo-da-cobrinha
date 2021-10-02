@@ -3,4 +3,5 @@
 
 CMakeFiles/fruta.dir/src/fruta.cpp.o
  ../include/fruta.hpp
+ ../include/tabuleiro.hpp
  /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/fruta.cpp

@@ -17,19 +17,19 @@ Controller::Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Cobr
 void Controller::muda_posicao() {
     int pos = teclado->le_teclado();
     if (pos == 1) {
-        cobra->set_vy(-0.1);
+        cobra->set_vy(-1);
         cobra->set_vx(0);
     }
     else if (pos == -1) {
-        cobra->set_vy(0.1);
+        cobra->set_vy(1);
         cobra->set_vx(0);
     }
     else if (pos == 2) {
-        cobra->set_vx(0.1);
+        cobra->set_vx(1);
         cobra->set_vy(0);
     }
     else if (pos == -2) {
-        cobra->set_vx(-0.1);
+        cobra->set_vx(-1);
         cobra->set_vy(0);
     }
 }
@@ -61,6 +61,7 @@ void Controller::verifica_posicao(){
     for (int i = 1; i < cobra->get_cobrinha_horizontal().size(); i++) {
         if (cobra->get_x_atual() == cobra->get_cobrinha_horizontal()[i]) {
             if (cobra->get_y_atual() == cobra->get_cobrinha_vertical()[i]) {
+                std::cout<<"aqui"<<std::endl;
                 morreu();
             }
         }
@@ -90,21 +91,11 @@ void Controller::comeu() {
 void Controller::posicao_fruta() {
     int x, y;
     int tolerancia = 10;
+    
     //gera posições aleatórias dentro do tabuleiro
-    x = rand() % tabuleiro->get_tabuleiro_horizontal()-tabuleiro->get_bloco_horizontal();
-    y = rand() % tabuleiro->get_tabuleiro_vertical()-tabuleiro->get_bloco_vertical();
-    //se o local escolhido for o mesmo da cobra tem que achar outro
-    if (x <= cobra->get_x_atual()+tolerancia && x >= cobra->get_x_atual()-tolerancia) {
-        if (y <= cobra->get_y_atual()+tolerancia && y >= cobra->get_y_atual()-tolerancia) {
-            posicao_fruta();            
-        }
-    }
-    if (x < 0) {
-        x = x + 50;
-    } 
-    if (y < 0) {
-        y = y + 50;
-    } 
+    x = (rand() % 20) * tabuleiro->get_bloco_horizontal(); 
+    y = (rand() % 20) * tabuleiro->get_bloco_vertical();  
+
     //atualiza a posição da frutinha
     fruta->set_x_fruta(x);
     fruta->set_y_fruta(y);
@@ -140,5 +131,5 @@ void Controller::morreu() {
     cobra->set_vx(0);
     cobra->set_vy(0);
     std::cout<<"GAME OVER"<<std::endl;
-    //exit(0);
+    exit(0);
 }
