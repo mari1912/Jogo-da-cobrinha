@@ -38,7 +38,7 @@ SDL2/SDL.h
 SDL2/SDL_image.h
 -
 
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.cpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/controller.cpp
 memory
 -
 iostream
@@ -52,5 +52,5 @@ SDL2/SDL_image.h
 cstdlib
 -
 controller.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/controller.hpp
 
