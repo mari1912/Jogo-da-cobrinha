@@ -1,6 +1,6 @@
 #include "cobra.hpp"
 
-//Construtor
+/** @brief Construtor */ 
 Cobra::Cobra(int x_atual, float vx, int y_atual, float vy) {
     this->x_atual = x_atual;
     this->vx = vx;
@@ -10,19 +10,26 @@ Cobra::Cobra(int x_atual, float vx, int y_atual, float vy) {
     cobrinha_vertical.push_back(y_atual);
 }
 
-//permite passar os atributos
+/**
+ * @return x atual */ 
 int Cobra::get_x_atual() {
     return x_atual;
 }
 
+/**
+ * @return vx */ 
 float Cobra::get_vx() {
     return vx;
 }
 
+/**
+ * @return y atual */ 
 int Cobra::get_y_atual() {
     return y_atual;
 }
 
+/**
+ * @return vy */ 
 float Cobra::get_vy() {
     return vy;
 }
@@ -35,7 +42,7 @@ std::vector<int> Cobra::get_cobrinha_vertical() {
     return cobrinha_vertical;
 }
 
-//permite atualizar os atributos
+/* ! permite atualizar os atributos */ 
 void Cobra::set_x_atual(int x_novo) {
     x_atual = x_novo;
 }
