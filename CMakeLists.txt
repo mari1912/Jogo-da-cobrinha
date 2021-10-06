@@ -33,3 +33,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Bibliotecas linkadas externamente
 target_link_libraries(MeuJogo SDL2)
 target_link_libraries(MeuJogo SDL2_image)
+
+# Automatizacao do Doxygen
+find_package(Doxygen REQUIRED dot)
+
+set(DOXYGEN_EXTRACT_ALL YES)
+set(DOXYGEN_EXTRACT_PRIVATE YES)
+set(DOXYGEN EXTRACT_STATIC YES)
+set(DOXYGEN_TEMPLATE_RELATIONS YES)
+set(DOXYGEN_COLLABORATION_GRAPH YES)
+set(DOXYGEN_UML_LOOK YES)
+set(DOXYGEN_CLASS_GRAPH YES)
+
+doxygen_add_docs(doc)
+
