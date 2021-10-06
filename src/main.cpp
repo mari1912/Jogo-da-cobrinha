@@ -46,7 +46,7 @@ int main() {
         view->render();
 
         /* ! Delay para diminuir o framerate */ 
-        SDL_Delay(300);
+        SDL_Delay(140);
     }
          
     view->finaliza();

@@ -63,7 +63,6 @@ void Controller::verifica_posicao(){
     for (int i = 1; i < cobra->get_cobrinha_horizontal().size(); i++) {
         if (cobra->get_x_atual() == cobra->get_cobrinha_horizontal()[i]) {
             if (cobra->get_y_atual() == cobra->get_cobrinha_vertical()[i]) {
-                std::cout<<"aqui"<<std::endl;
                 morreu();
             }
         }
