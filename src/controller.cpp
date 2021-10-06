@@ -6,7 +6,8 @@
 #include <cstdlib> 
 #include "controller.hpp"
 
-//Construtor
+/**
+* @brief define o construtor */ 
 Controller::Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Cobra>cobra, std::shared_ptr<Fruta>fruta, std::shared_ptr<Teclado>teclado) {
     this->tabuleiro = tabuleiro;
     this->cobra = cobra;
@@ -14,6 +15,7 @@ Controller::Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Cobr
     this->teclado = teclado;
 }
 
+/** @brief faz a mundança de direcao da cobrinha */ 
 void Controller::muda_posicao() {
     int pos = teclado->le_teclado();
     if (pos == 1) {
@@ -34,21 +36,21 @@ void Controller::muda_posicao() {
     }
 }
 
-//calcula a posicao horizontal da cobrinha
+/** @brief calcula a posicao horizontal da cobrinha */ 
 void Controller::calcula_x_cobrinha() {
     int x_cobrinha;
     x_cobrinha = cobra->get_x_atual() + cobra->get_vx() * tabuleiro->get_bloco_horizontal();
     cobra->set_x_atual(x_cobrinha);
 }
 
-//calcula a posicao vertical da cobrinha
+/** @brief  calcula a posicao vertical da cobrinha  */ 
 void Controller::calcula_y_cobrinha() {
     int y_cobrinha;
     y_cobrinha = cobra->get_y_atual() + cobra->get_vy() * tabuleiro->get_bloco_vertical();
     cobra->set_y_atual(y_cobrinha);
 }
 
-//verifica se a cobrinha está dentro do tabuleiro, se trombou e se a cobrinha comeu a frutinha
+/** @brief verifica se a cobrinha está dentro do tabuleiro, se trombou e se a cobrinha comeu a frutinha */ 
 void Controller::verifica_posicao(){
     if((tabuleiro->get_tabuleiro_vertical()-tabuleiro->get_bloco_vertical()) < cobra-> get_y_atual() || 0 > cobra-> get_y_atual()){
         cobra->set_vy(0);    
@@ -70,6 +72,7 @@ void Controller::verifica_posicao(){
 
 }
 
+/** @brief verifica se a cobrinha comeu a fruta */ 
 void Controller::comeu() {
     int tolerancia = 10; //tolerancia com relação a posição da cobra em relação a frutinha
     
@@ -88,6 +91,7 @@ void Controller::comeu() {
     }
 }
 
+/** @brief gera a  posicao da fruta */ 
 void Controller::posicao_fruta() {
     int x, y;
     int tolerancia = 10;
@@ -102,6 +106,7 @@ void Controller::posicao_fruta() {
 }
 
 
+/** @brief faz a cobrinha crescer */ 
 void Controller::cresce() {
     int x_ultimo, y_ultimo, fim_x, fim_y;
     fim_x = cobra->get_cobrinha_horizontal().back();
@@ -112,6 +117,7 @@ void Controller::cresce() {
     cobra->set_cobrinha_aumento(x_ultimo, y_ultimo);
 }
 
+/** @brief faz a cobrinha andar */ 
 void Controller::anda() {
     int tamanho = cobra->get_cobrinha_horizontal().size();
     
@@ -127,6 +133,7 @@ void Controller::anda() {
     }
 }
 
+/** @brief faz a cobrinha morrer */ 
 void Controller::morreu() {
     cobra->set_vx(0);
     cobra->set_vy(0);

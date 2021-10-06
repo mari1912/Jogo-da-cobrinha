@@ -8,11 +8,21 @@
 #include "view.hpp"
 #include "controller.hpp"
 
+/**
+ * @brief Jogo da Cobrinha desenvolvido para a disciplina EA872
+ * @author Mariana Sartorato Jorge
+ * @author Daniele Souza Gonçalves 
+ * @date 05/10/2021
+ * @version 1.0 
+ */
 
+/**
+ * @return 0 
+ */ 
 int main() {
 
     bool rodando = true;
-    SDL_Event evento; // eventos discretos
+    SDL_Event evento; /* ! eventos discretos */ 
     std::shared_ptr<Cobra>cobra(new Cobra(0,1,0,0));
     std::shared_ptr<Tabuleiro>tabuleiro(new Tabuleiro());
     std::shared_ptr<Fruta>fruta(new Fruta(tabuleiro));
@@ -32,11 +42,11 @@ int main() {
                 rodando = false;
             }
         }
-        //coloca imagem na tela
+        /* !coloca imagem na tela */ 
         view->render();
 
-        // Delay para diminuir o framerate
-        SDL_Delay(80);
+        /* ! Delay para diminuir o framerate */ 
+        SDL_Delay(300);
     }
          
     view->finaliza();
