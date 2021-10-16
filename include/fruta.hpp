@@ -15,4 +15,6 @@ class Fruta {
         int get_y_fruta();
         void set_x_fruta(int x_fruta_novo);
         void set_y_fruta(int y_fruta_novo);
+        void salvar_jogo_fruta();
+        void recuperar_jogo_fruta();
 };

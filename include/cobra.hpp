@@ -24,4 +24,6 @@ class Cobra {
         void set_cobrinha_horizontal(int i, int novo); 
         void set_cobrinha_vertical(int i, int novo); 
         void set_cobrinha_aumento(int x, int y);
+        void salvar_jogo();
+        void recuperar_jogo();
 };
