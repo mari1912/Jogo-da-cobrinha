@@ -4,10 +4,14 @@
  * @brief  funcao que recebe os comandos do teclado
  */ 
 
-Teclado::Teclado() {
+Teclado::Teclado(std::shared_ptr<Cobra>cobra,std::shared_ptr<Fruta>fruta) {
     state = SDL_GetKeyboardState(nullptr);
     seta = 0;
+    this->cobra =  cobra;
+    this->fruta = fruta;
+    
 }
+
 
 int Teclado::le_teclado() {
     /*! Polling de eventos */ 
@@ -33,5 +37,14 @@ int Teclado::le_teclado() {
         seta = direita;
     }
 
+    if(state[SDL_SCANCODE_S]){
+        cobra-> salvar_jogo();
+        fruta -> salvar_jogo_fruta();
+    }
+
+    if(state[SDL_SCANCODE_R]){
+        //cobra-> recuperar_jogo();
+        fruta -> recuperar_jogo_fruta();
+    }
     return seta; 
 }

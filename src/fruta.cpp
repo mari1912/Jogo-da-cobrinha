@@ -1,4 +1,8 @@
 #include "fruta.hpp"
+#include "json.hpp"
+#include <fstream>
+
+using nlohmann::json;
 
 /**
 * @brief define construtor   */
@@ -31,4 +35,28 @@ void Fruta::set_x_fruta(int x_fruta_novo) {
 * @brief permite atualizar os atributos y */
 void Fruta::set_y_fruta(int y_fruta_novo) {
     y_fruta = y_fruta_novo;
+}
+
+void Fruta::salvar_jogo_fruta(){
+    json j;
+    j["fruta"]["x_atual"] = x_fruta;
+    j["fruta"]["y_atual"] = y_fruta;
+  
+   
+    std::ofstream f2;
+    f2.open("dados_frutas.json");
+    f2 << j;
+    f2.close(); 
+
+}
+
+void Fruta::recuperar_jogo_fruta(){
+    json j2;
+    std::ifstream f2;
+    f2.open("dados_frutas.json");
+    f2 >> j2;
+    f2.close();
+    x_fruta = j2["fruta"]["x_fruta"];
+    y_fruta = j2["fruta"]["y_fruta"];
+
 }
