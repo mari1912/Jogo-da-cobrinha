@@ -1,6 +1,7 @@
 #include "cobra.hpp"
 #include "json.hpp"
 #include <fstream>
+#include <iostream>
 
 using nlohmann::json;
 /** @brief Construtor */ 
@@ -78,41 +79,39 @@ void Cobra::set_cobrinha_aumento(int x, int y) {
 void Cobra::salvar_jogo(){
     // copiando 
     json j;
-    j["cobra"]["vx"] =  get_vx();
-    j["cobra"]["vy"] = get_vy();
-    j["cobra"]["x_atual"] = get_x_atual();
-    j["cobra"]["y_atual"] =  get_y_atual();
-    j["cobra"]["horizontal"] =  get_cobrinha_horizontal();
-    j["cobra"]["vertical"] =  get_cobrinha_vertical();
+    j["cobra"]["vx"] = vx;
+    j["cobra"]["vy"] = vy;
+    j["cobra"]["x_atual"] = x_atual;
+    j["cobra"]["y_atual"] = y_atual;
+    j["cobra"]["horizontal"] = cobrinha_horizontal;
+    j["cobra"]["vertical"] = cobrinha_vertical;
+    j["cobra"]["tamanho"] = cobrinha_vertical.size();
    
     std::ofstream f2;
     f2.open("dados.json");
     f2 << j;
     f2.close(); 
-
-
-    }
+}
 
 void Cobra:: recuperar_jogo(){
     json j2;
-    std::vector <int>vetor;
-    std::vector <int>vetor2;
+    int tam;
+
     std::ifstream f2;
-    f2.open("teste.json");
+    f2.open("dados.json");
     f2 >> j2;
     f2.close();
-    set_vx(j2["cobra"]["vx"]);
-    set_vy(j2["cobra"]["vy"]);
-    set_x_atual(j2["cobra"]["x_atual"]);
-    set_y_atual(j2["cobra"]["y_atual"]);
-    
-    //vetor = (j2["cobra"]["horizontal"]);
-   // vetor2 = j2["cobra"]["vertical"];
+    vx = j2["cobra"]["vx"];
+    vy = j2["cobra"]["vy"];
+    x_atual = j2["cobra"]["x_atual"];
+    y_atual = j2["cobra"]["y_atual"];
+    tam = j2["cobra"]["tamanho"];
 
-/*
-    for(int i = 0; i < vetor.size(); i++){
-        set_cobrinha_horizontal(i,j2["cobra"]["horizontal"][i]);
-        set_cobrinha_vertical(i,j2["cobra"]["vertical"][i]);
-        }
-*/
+    cobrinha_vertical.resize(tam);
+    cobrinha_horizontal.resize(tam);
+
+    for (int i=0; i < tam; i++) {
+        cobrinha_vertical[i] = j2["cobra"]["vertical"][i];
+        cobrinha_horizontal[i] = j2["cobra"]["horizontal"][i];
+    }
 }

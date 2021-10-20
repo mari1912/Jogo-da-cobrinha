@@ -3,5 +3,6 @@
 
 CMakeFiles/fruta.dir/src/fruta.cpp.o
  ../include/fruta.hpp
+ ../include/json.hpp
  ../include/tabuleiro.hpp
- /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/fruta.cpp
+ /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/fruta.cpp

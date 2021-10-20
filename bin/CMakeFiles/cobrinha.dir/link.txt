@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcobrinha.a  CMakeFiles/cobrinha.dir/src/cobrinha.cpp.o
-/usr/bin/ranlib libcobrinha.a

@@ -6,13 +6,31 @@
 
 #IncludeRegexTransform: 
 
+../include/cobra.hpp
+vector
+-
+
+../include/fruta.hpp
+tabuleiro.hpp
+../include/tabuleiro.hpp
+memory
+-
+
+../include/tabuleiro.hpp
+
 ../include/teclado.hpp
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
 -
+cobra.hpp
+../include/cobra.hpp
+memory
+-
+fruta.hpp
+../include/fruta.hpp
 
-/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/teclado.cpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/teclado.cpp
 teclado.hpp
-/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/teclado.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/teclado.hpp
 

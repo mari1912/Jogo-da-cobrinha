@@ -26,5 +26,4 @@ class Controller {
         void cresce();                              //a cobrinha cresce
         void anda();
         void morreu();
-        //void salvar_jogo(); 
 };

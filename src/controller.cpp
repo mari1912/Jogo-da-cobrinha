@@ -66,7 +66,6 @@ void Controller::verifica_posicao(){
     for (int i = 1; i < cobra->get_cobrinha_horizontal().size(); i++) {
         if (cobra->get_x_atual() == cobra->get_cobrinha_horizontal()[i]) {
             if (cobra->get_y_atual() == cobra->get_cobrinha_vertical()[i]) {
-                std::cout<<"aqui"<<std::endl;
                 morreu();
             }
         }
@@ -143,24 +142,3 @@ void Controller::morreu() {
     std::cout<<"GAME OVER"<<std::endl;
     exit(0);
 }
-
-/*void Controller::salvar_jogo(){
-    // copiando 
-    json j;
-    j["cobra"]["vx"] = cobra-> get_vx();
-    j["cobra"]["vy"] = cobra-> get_vy();
-    j["cobra"]["x_atual"] = cobra-> get_x_atual();
-    j["cobra"]["y_atual"] = cobra-> get_y_atual();
-    j["cobra"]["horizontal"] = cobra-> get_cobrinha_horizontal();
-    j["cobra"]["vertical"] = cobra-> get_cobrinha_vertical();
-    j["fruta"]["x_fruta"] = fruta-> get_x_fruta();
-    j["fruta"]["y_fruta"] = fruta-> get_y_fruta();
-
-    std::ofstream f2;
-    f2.open("dados.json");
-    f2 << j;
-    f2.close(); 
-
-
-    }
-    */

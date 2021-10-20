@@ -43,7 +43,7 @@ int Teclado::le_teclado() {
     }
 
     if(state[SDL_SCANCODE_R]){
-        //cobra-> recuperar_jogo();
+        cobra-> recuperar_jogo();
         fruta -> recuperar_jogo_fruta();
     }
     return seta; 

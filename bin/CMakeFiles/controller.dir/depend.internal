@@ -5,6 +5,7 @@ CMakeFiles/controller.dir/src/controller.cpp.o
  ../include/cobra.hpp
  ../include/controller.hpp
  ../include/fruta.hpp
+ ../include/json.hpp
  ../include/tabuleiro.hpp
  ../include/teclado.hpp
- /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/controller.cpp
+ /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.cpp
