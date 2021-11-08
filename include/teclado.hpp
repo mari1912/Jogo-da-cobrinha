@@ -1,8 +1,9 @@
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+//#include <SDL2/SDL_image.h>
 #include "cobra.hpp"
 #include <memory>
 #include "fruta.hpp"
+
 #pragma once
 
 class Teclado {

@@ -1,8 +1,6 @@
 #include "cobra.hpp"
 #include "fruta.hpp"
 #include "tabuleiro.hpp"
-#include "controller.hpp"
-#include "teclado.hpp"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 

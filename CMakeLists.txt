@@ -11,8 +11,6 @@ add_executable(MeuJogo src/main.cpp)
 include_directories(include)
 
 # Bibliotecas locais (estaticas)
-add_library(model src/model.cpp)
-target_link_libraries(MeuJogo model)
 add_library(cobra src/cobra.cpp)
 target_link_libraries(MeuJogo cobra)
 add_library(fruta src/fruta.cpp)
@@ -33,6 +31,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Bibliotecas linkadas externamente
 target_link_libraries(MeuJogo SDL2)
 target_link_libraries(MeuJogo SDL2_image)
+target_link_libraries(MeuJogo pthread)
 
 # Automatizacao do Doxygen
 find_package(Doxygen REQUIRED dot)

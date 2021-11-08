@@ -359,8 +359,6 @@ vector
 ../include/teclado.hpp
 SDL2/SDL.h
 -
-SDL2/SDL_image.h
--
 cobra.hpp
 ../include/cobra.hpp
 memory
@@ -374,10 +372,6 @@ memory
 iostream
 -
 vector
--
-SDL2/SDL.h
--
-SDL2/SDL_image.h
 -
 cstdlib
 -

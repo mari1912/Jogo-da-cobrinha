@@ -1,10 +1,6 @@
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <memory>
 #include <iostream>
-#include "model.hpp"
 #include "view.hpp"
-#include "controller.hpp"
 
 /** @brief Construtor */ 
 View::View(std::shared_ptr<Cobra>cobra, std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){ 

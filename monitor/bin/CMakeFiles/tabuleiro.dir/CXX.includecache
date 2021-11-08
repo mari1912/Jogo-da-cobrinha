@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/tabuleiro.hpp
+
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/tabuleiro.cpp
+tabuleiro.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/tabuleiro.hpp
+

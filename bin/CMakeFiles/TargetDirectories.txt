@@ -6,6 +6,5 @@
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/view.dir
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/tabuleiro.dir
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/fruta.dir
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/model.dir
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/cobra.dir
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/MeuJogo.dir

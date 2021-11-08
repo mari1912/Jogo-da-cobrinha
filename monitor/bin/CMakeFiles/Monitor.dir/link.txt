@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/Monitor.dir/src/main.cpp.o  -o Monitor  libcobra.a libfruta.a libtabuleiro.a libview.a -lSDL2 -lSDL2_image -lpthread 

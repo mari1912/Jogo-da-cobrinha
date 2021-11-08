@@ -10,41 +10,13 @@
 vector
 -
 
-../include/controller.hpp
-cobra.hpp
-../include/cobra.hpp
-fruta.hpp
-../include/fruta.hpp
-tabuleiro.hpp
-../include/tabuleiro.hpp
-teclado.hpp
-../include/teclado.hpp
-SDL2/SDL.h
--
-SDL2/SDL_image.h
--
-
 ../include/fruta.hpp
 tabuleiro.hpp
 ../include/tabuleiro.hpp
 memory
 -
 
-../include/model.hpp
-
 ../include/tabuleiro.hpp
-
-../include/teclado.hpp
-SDL2/SDL.h
--
-SDL2/SDL_image.h
--
-cobra.hpp
-../include/cobra.hpp
-memory
--
-fruta.hpp
-../include/fruta.hpp
 
 ../include/view.hpp
 cobra.hpp
@@ -53,28 +25,16 @@ fruta.hpp
 ../include/fruta.hpp
 tabuleiro.hpp
 ../include/tabuleiro.hpp
-controller.hpp
-../include/controller.hpp
-teclado.hpp
-../include/teclado.hpp
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
 -
 
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/view.cpp
-SDL2/SDL.h
--
-SDL2/SDL_image.h
--
 memory
 -
 iostream
 -
-model.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/model.hpp
 view.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/view.hpp
-controller.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.hpp
 

@@ -1,12 +1,9 @@
 #include <memory>
 #include <iostream>
 #include <vector>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <cstdlib> 
 #include "controller.hpp"
 #include "json.hpp"
-
 
 
 /**
@@ -76,16 +73,14 @@ void Controller::verifica_posicao(){
 
 /** @brief verifica se a cobrinha comeu a fruta */ 
 void Controller::comeu() {
-    int tolerancia = 10; //tolerancia com relação a posição da cobra em relação a frutinha
     
     //se estiver na mesma posição em relação a x 
-    if ((fruta->get_x_fruta() <= cobra->get_x_atual() + tolerancia) && (fruta->get_x_fruta() >= cobra->get_x_atual() - tolerancia)) {
+    if ((fruta->get_x_fruta() <= cobra->get_x_atual()) && (fruta->get_x_fruta() >= cobra->get_x_atual())) {
         //se estiver na mesma posição em relação a y
-        if ((fruta->get_y_fruta() <= cobra->get_y_atual() + tolerancia) && (fruta->get_y_fruta() >= cobra->get_y_atual() - tolerancia)) {
+        if ((fruta->get_y_fruta() <= cobra->get_y_atual()) && (fruta->get_y_fruta() >= cobra->get_y_atual())) {
             //calcula uma nova posição para a fruta
             posicao_fruta();
             cresce();
-            tabuleiro->aumenta_placar();
         }
     }
     else {
@@ -96,7 +91,6 @@ void Controller::comeu() {
 /** @brief gera a  posicao da fruta */ 
 void Controller::posicao_fruta() {
     int x, y;
-    int tolerancia = 10;
     
     //gera posições aleatórias dentro do tabuleiro
     x = (rand() % 20) * tabuleiro->get_bloco_horizontal(); 

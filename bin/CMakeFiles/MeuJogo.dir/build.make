@@ -79,7 +79,6 @@ MeuJogo_EXTERNAL_OBJECTS =
 
 MeuJogo: CMakeFiles/MeuJogo.dir/src/main.cpp.o
 MeuJogo: CMakeFiles/MeuJogo.dir/build.make
-MeuJogo: libmodel.a
 MeuJogo: libcobra.a
 MeuJogo: libfruta.a
 MeuJogo: libtabuleiro.a

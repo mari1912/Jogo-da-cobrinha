@@ -4,6 +4,7 @@
 CMakeFiles/MeuJogo.dir/src/main.cpp.o: ../include/cobra.hpp
 CMakeFiles/MeuJogo.dir/src/main.cpp.o: ../include/controller.hpp
 CMakeFiles/MeuJogo.dir/src/main.cpp.o: ../include/fruta.hpp
+CMakeFiles/MeuJogo.dir/src/main.cpp.o: ../include/json.hpp
 CMakeFiles/MeuJogo.dir/src/main.cpp.o: ../include/tabuleiro.hpp
 CMakeFiles/MeuJogo.dir/src/main.cpp.o: ../include/teclado.hpp
 CMakeFiles/MeuJogo.dir/src/main.cpp.o: ../include/view.hpp

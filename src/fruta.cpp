@@ -41,9 +41,7 @@ void Fruta::set_y_fruta(int y_fruta_novo) {
 void Fruta::salvar_jogo_fruta(){
     json j;
     j["fruta"]["x_fruta"] = x_fruta;
-    j["fruta"]["y_fruta"] = y_fruta;
-  
-   
+    j["fruta"]["y_fruta"] = y_fruta;  
     std::ofstream f2;
     f2.open("dados_frutas.json");
     f2 << j;
