@@ -5,6 +5,7 @@ CMakeFiles/Monitor.dir/src/main.cpp.o: ../include/cobra.hpp
 CMakeFiles/Monitor.dir/src/main.cpp.o: ../include/fruta.hpp
 CMakeFiles/Monitor.dir/src/main.cpp.o: ../include/json.hpp
 CMakeFiles/Monitor.dir/src/main.cpp.o: ../include/tabuleiro.hpp
+CMakeFiles/Monitor.dir/src/main.cpp.o: ../include/teclado.hpp
 CMakeFiles/Monitor.dir/src/main.cpp.o: ../include/view.hpp
 CMakeFiles/Monitor.dir/src/main.cpp.o: ../src/main.cpp
 

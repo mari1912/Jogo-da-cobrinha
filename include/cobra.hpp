@@ -4,7 +4,7 @@
 class Cobra {
 
     private: 
-        int x_atual, y_atual;
+        int x_atual, y_atual, vida;
         float vx, vy;
         std::vector<int> cobrinha_horizontal;
         std::vector<int> cobrinha_vertical;
@@ -15,6 +15,7 @@ class Cobra {
         float get_vx();
         int get_y_atual();
         float get_vy();
+        int get_vida();
         std::vector <int> get_cobrinha_horizontal();
         std::vector <int> get_cobrinha_vertical();
         void set_x_atual(int x_novo);
@@ -24,6 +25,7 @@ class Cobra {
         void set_cobrinha_horizontal(int i, int novo); 
         void set_cobrinha_vertical(int i, int novo); 
         void set_cobrinha_aumento(int x, int y);
+        void set_vida(int nova_vida);
         void salvar_jogo();
         void recuperar_jogo();
 };

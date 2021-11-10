@@ -342,6 +342,16 @@ vector
 
 ../include/tabuleiro.hpp
 
+../include/teclado.hpp
+SDL2/SDL.h
+-
+cobra.hpp
+../include/cobra.hpp
+memory
+-
+fruta.hpp
+../include/fruta.hpp
+
 ../include/view.hpp
 cobra.hpp
 ../include/cobra.hpp
@@ -377,8 +387,12 @@ view.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/view.hpp
 json.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/json.hpp
+teclado.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/teclado.hpp
 fstream
 -
 sstream
+-
+string
 -
 

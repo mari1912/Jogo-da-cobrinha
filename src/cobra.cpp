@@ -11,6 +11,7 @@ Cobra::Cobra(int x_atual, float vx, int y_atual, float vy) {
     this->vy = vy;
     cobrinha_horizontal.push_back(x_atual);
     cobrinha_vertical.push_back(y_atual);
+    vida = 1;
 }
 
 /**
@@ -29,6 +30,10 @@ float Cobra::get_vx() {
  * @return y atual */ 
 int Cobra::get_y_atual() {
     return y_atual;
+}
+
+int Cobra::get_vida() {
+    return vida;
 }
 
 /**
@@ -73,6 +78,10 @@ void Cobra::set_cobrinha_vertical(int i, int novo) {
 void Cobra::set_cobrinha_aumento(int x, int y) {
     cobrinha_horizontal.push_back(x);
     cobrinha_vertical.push_back(y);
+}
+
+void Cobra::set_vida(int nova_vida) {
+    vida = nova_vida;
 }
 
 void Cobra::salvar_jogo(){

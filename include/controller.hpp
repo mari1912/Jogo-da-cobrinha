@@ -17,7 +17,7 @@ class Controller {
 
     public:
         Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Cobra>cobra, std::shared_ptr<Fruta>fruta, std::shared_ptr<Teclado>teclado);    //construtor
-        void muda_posicao();                        //ve para onde tem que ir a partir do teclado
+        void muda_posicao(int pos);                        //ve para onde tem que ir a partir do teclado
         void calcula_x_cobrinha();                  //calcula posicao horinzontal da cobrinha
         void calcula_y_cobrinha();                  //calcula posicao vertical da cobrinha
         void verifica_posicao();                    //Não deixa a cobrinha sair do tabuleiro

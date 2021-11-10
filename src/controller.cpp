@@ -16,8 +16,8 @@ Controller::Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Cobr
 }
 
 /** @brief faz a mundança de direcao da cobrinha */ 
-void Controller::muda_posicao() {
-    int pos = teclado->le_teclado();
+void Controller::muda_posicao(int pos) {
+    //int pos = teclado->le_teclado();
     if (pos == 1) {
         cobra->set_vy(-1);
         cobra->set_vx(0);
@@ -133,6 +133,7 @@ void Controller::anda() {
 void Controller::morreu() {
     cobra->set_vx(0);
     cobra->set_vy(0);
+    cobra->set_vida(0);
     std::cout<<"GAME OVER"<<std::endl;
-    exit(0);
+    //exit(0);
 }

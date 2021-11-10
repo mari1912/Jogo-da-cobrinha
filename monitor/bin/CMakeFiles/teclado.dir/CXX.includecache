@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/cobra.hpp
+vector
+-
+
+../include/fruta.hpp
+tabuleiro.hpp
+../include/tabuleiro.hpp
+memory
+-
+
+../include/tabuleiro.hpp
+
+../include/teclado.hpp
+SDL2/SDL.h
+-
+cobra.hpp
+../include/cobra.hpp
+memory
+-
+fruta.hpp
+../include/fruta.hpp
+
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/teclado.cpp
+teclado.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/teclado.hpp
+

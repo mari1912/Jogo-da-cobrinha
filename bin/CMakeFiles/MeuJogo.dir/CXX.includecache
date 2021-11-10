@@ -391,6 +391,8 @@ boost/asio.hpp
 -
 fstream
 -
+iostream
+-
 cobra.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/cobra.hpp
 fruta.hpp

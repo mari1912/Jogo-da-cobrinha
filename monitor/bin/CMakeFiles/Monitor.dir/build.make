@@ -83,6 +83,7 @@ Monitor: libcobra.a
 Monitor: libfruta.a
 Monitor: libtabuleiro.a
 Monitor: libview.a
+Monitor: libteclado.a
 Monitor: CMakeFiles/Monitor.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Monitor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Monitor.dir/link.txt --verbose=$(VERBOSE)

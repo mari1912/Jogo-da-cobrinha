@@ -19,6 +19,8 @@ add_library(tabuleiro src/tabuleiro.cpp)
 target_link_libraries(Monitor tabuleiro)
 add_library(view src/view.cpp)
 target_link_libraries(Monitor view)
+add_library(view src/teclado.cpp)
+target_link_libraries(Monitor teclado)
 
 # Garantir que usaremos C++11 (ou superior, se preciso)
 set(CMAKE_CXX_STANDARD 11)
