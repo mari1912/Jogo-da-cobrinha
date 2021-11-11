@@ -36,7 +36,7 @@ int Teclado::le_teclado() {
     if (state[SDL_SCANCODE_RIGHT]) {
         seta = direita;
     }
-
+/*
     if(state[SDL_SCANCODE_S]){
         cobra-> salvar_jogo();
         fruta -> salvar_jogo_fruta();
@@ -48,6 +48,6 @@ int Teclado::le_teclado() {
         fruta -> recuperar_jogo_fruta();
         seta = -3;
     }
-
-    return 0; 
+*/
+    return seta; 
 }

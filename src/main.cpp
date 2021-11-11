@@ -31,10 +31,10 @@ int main() {
 
     bool rodando = true;
     SDL_Event evento; /* ! eventos discretos */ 
-    std::string v;
-    json recebe;
-    json j;
-    char tec[1000];
+    std::string mensagem_dados;
+    json recebido;
+    json enviar;
+    char tecla[100];
     int pos = 0;
     std::ifstream f;
     std::shared_ptr<Cobra>cobra(new Cobra(0,1,0,0));
@@ -43,13 +43,18 @@ int main() {
     std::shared_ptr<Teclado>teclado(new Teclado(cobra,fruta));
     std::shared_ptr<Controller>controller(new Controller(tabuleiro, cobra, fruta, teclado));
     std::shared_ptr<View>view(new View(cobra, fruta, tabuleiro));
-    
-    while(rodando) {
 
-        controller->muda_posicao(pos);
-        controller->calcula_x_cobrinha();
-        controller->calcula_y_cobrinha();
-        controller->verifica_posicao();
+    boost::asio::io_service my_io_service; // Conecta com o SO
+
+    udp::endpoint local_endpoint(udp::v4(), 9001); // endpoint: contem
+                                                        // conf. da conexao (ip/port)
+
+    udp::socket my_socket(my_io_service, // io service
+                                local_endpoint); // endpoint
+
+    udp::endpoint remote_endpoint; // vai conter informacoes de quem conectar
+
+    while(rodando) {
 
         while (SDL_PollEvent(&evento)) {
             if (evento.type == SDL_QUIT) {
@@ -61,61 +66,44 @@ int main() {
             rodando = false;
         }
 
-        boost::asio::io_service my_io_service; // Conecta com o SO
+        controller->muda_posicao(pos);
+        controller->calcula_x_cobrinha();
+        controller->calcula_y_cobrinha();
+        controller->verifica_posicao();
 
-        udp::endpoint local_endpoint(udp::v4(), 9001); // endpoint: contem
-                                                        // conf. da conexao (ip/port)
 
-        udp::socket my_socket(my_io_service, // io service
-                                local_endpoint); // endpoint
-
-        udp::endpoint remote_endpoint; // vai conter informacoes de quem conectar
-        std::cout<<"antes"<<std::endl;
-        my_socket.receive_from(boost::asio::buffer(tec,1000), // Local do buffer
+        my_socket.receive_from(boost::asio::buffer(tecla,1000), // Local do buffer
                                 remote_endpoint); // Confs. do Cliente
-        std::cout<<"aqui"<<std::endl;
+//        std::cout<<"aqui"<<std::endl;
 
-        std::stringstream(tec) >> recebe;
-        pos = recebe["tecla"];
+        std::stringstream(tecla) >> recebido;
+ //       std::cout<<recebido<<std::endl;
+        pos = recebido["tecla"];
 
         
-        j["cobra"]["vx"] = cobra->get_vx();
-        j["cobra"]["vy"] = cobra->get_vy();
-        j["cobra"]["x_atual"] = cobra->get_x_atual();
-        j["cobra"]["y_atual"] = cobra->get_y_atual();
-        j["cobra"]["horizontal"] = cobra->get_cobrinha_horizontal();
-        j["cobra"]["vertical"] = cobra->get_cobrinha_vertical();
-        j["cobra"]["tamanho"] = cobra->get_cobrinha_vertical().size(); 
+        enviar["cobra"]["vx"] = cobra->get_vx();
+        enviar["cobra"]["vy"] = cobra->get_vy();
+        enviar["cobra"]["x_atual"] = cobra->get_x_atual();
+        enviar["cobra"]["y_atual"] = cobra->get_y_atual();
+        enviar["cobra"]["horizontal"] = cobra->get_cobrinha_horizontal();
+        enviar["cobra"]["vertical"] = cobra->get_cobrinha_vertical();
+        enviar["cobra"]["tamanho"] = (cobra->get_cobrinha_vertical()).size(); 
 
-        j["fruta"]["x_fruta"] = fruta->get_x_fruta();
-        j["fruta"]["y_fruta"] = fruta->get_y_fruta();
+        enviar["fruta"]["x_fruta"] = fruta->get_x_fruta();
+        enviar["fruta"]["y_fruta"] = fruta->get_y_fruta();
 
-        j["rodando"] = rodando;
-/*
-        boost::asio::io_service io_service;
+        enviar["rodando"] = rodando;
 
-        udp::endpoint local_endpoint(udp::v4(), 0);
-        udp::socket meu_socket(io_service, local_endpoint);
+        mensagem_dados = enviar.dump();
+        my_socket.send_to(boost::asio::buffer(mensagem_dados), remote_endpoint);
+//        std::cout<<"Enviado pelo server"<<mensagem_dados<<std::endl;
 
-        // Encontrando IP remoto
-        boost::asio::ip::address ip_remoto =
-        boost::asio::ip::address::from_string("127.0.0.1");
-
-        udp::endpoint remote_endpoint(ip_remoto, 9001);
-*/       
-        v = j.dump();
-        my_socket.send_to(boost::asio::buffer(v), remote_endpoint);
-
-
-        /* !coloca imagem na tela */ 
         view->render();
 
-        /* ! Delay para diminuir o framerate */ 
         SDL_Delay(150);
-    }
+    }    
 
     view->finaliza();
-    exit(0);    
-
+    
     return 0;
 }
