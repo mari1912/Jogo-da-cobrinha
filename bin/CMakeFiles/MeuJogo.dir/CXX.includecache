@@ -354,6 +354,14 @@ utility
 vector
 -
 
+../include/receptor.hpp
+memory
+-
+cobra.hpp
+../include/cobra.hpp
+fruta.hpp
+../include/fruta.hpp
+
 ../include/tabuleiro.hpp
 
 ../include/teclado.hpp
@@ -407,4 +415,8 @@ controller.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.hpp
 json.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/json.hpp
+thread
+-
+receptor.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/receptor.hpp
 

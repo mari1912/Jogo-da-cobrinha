@@ -21,6 +21,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/teclado.dir/DependInfo.cmake"
   "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/view.dir/DependInfo.cmake"
   "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/controller.dir/DependInfo.cmake"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/receptor.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

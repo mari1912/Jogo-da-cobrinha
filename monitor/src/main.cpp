@@ -12,6 +12,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <chrono>
 
 using boost::asio::ip::udp;
 using nlohmann::json;
@@ -62,16 +63,21 @@ int main() {
             }
         }
 
+        if(cobra->get_vida() == 0) {
+            rodando = false;
+        }
+
         tec["tecla"] = teclado->le_teclado();
+ //       std::cout<<tec["tecla"]<<std::endl;
 
        //Envia mensagem
         dados_enviados = tec.dump();
         meu_socket.send_to(boost::asio::buffer(dados_enviados), remote_endpoint);
- //     std::cout<<"Enviado pelo monitor"<<dados_enviados<<std::endl;
+   //     std::cout<<"Enviado pelo monitor"<<dados_enviados<<std::endl;
 
         meu_socket.receive_from(boost::asio::buffer(dados_recebidos,1000), // Local do buffer
                                 remote_endpoint); // Confs. do Cliente
-     
+    
         std::stringstream(dados_recebidos) >> j;
  //       std::cout<<"Recebido pelo monitor"<<j<<std::endl;
 
@@ -79,6 +85,7 @@ int main() {
         cobra->set_vy(j["cobra"]["vy"]);
         cobra->set_x_atual(j["cobra"]["x_atual"]);
         cobra->set_y_atual(j["cobra"]["y_atual"]);
+        cobra->set_vida(j["cobra"]["vida"]);
 
         for (int i=0; i<j["cobra"]["tamanho"]; i++) {
             cobra->set_cobrinha_vertical(j["cobra"]["vertical"]);
@@ -91,6 +98,7 @@ int main() {
         fruta->set_y_fruta(j["fruta"]["y_fruta"]);
         
         view->render();
+        
     }   
 
     view->finaliza();

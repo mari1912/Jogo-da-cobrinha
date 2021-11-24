@@ -23,6 +23,9 @@ add_library(view src/view.cpp)
 target_link_libraries(MeuJogo view)
 add_library(controller src/controller.cpp)
 target_link_libraries(MeuJogo controller)
+add_library(receptor src/receptor.cpp)
+target_link_libraries(MeuJogo receptor)
+
 
 # Garantir que usaremos C++11 (ou superior, se preciso)
 set(CMAKE_CXX_STANDARD 11)

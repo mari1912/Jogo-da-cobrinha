@@ -124,6 +124,19 @@ doc/fast:
 .PHONY : doc/fast
 
 #=============================================================================
+# Target rules for targets named receptor
+
+# Build rule for target.
+receptor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 receptor
+.PHONY : receptor
+
+# fast build rule for target.
+receptor/fast:
+	$(MAKE) -f CMakeFiles/receptor.dir/build.make CMakeFiles/receptor.dir/build
+.PHONY : receptor/fast
+
+#=============================================================================
 # Target rules for targets named controller
 
 # Build rule for target.
@@ -322,6 +335,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/receptor.o: src/receptor.cpp.o
+
+.PHONY : src/receptor.o
+
+# target to build an object file
+src/receptor.cpp.o:
+	$(MAKE) -f CMakeFiles/receptor.dir/build.make CMakeFiles/receptor.dir/src/receptor.cpp.o
+.PHONY : src/receptor.cpp.o
+
+src/receptor.i: src/receptor.cpp.i
+
+.PHONY : src/receptor.i
+
+# target to preprocess a source file
+src/receptor.cpp.i:
+	$(MAKE) -f CMakeFiles/receptor.dir/build.make CMakeFiles/receptor.dir/src/receptor.cpp.i
+.PHONY : src/receptor.cpp.i
+
+src/receptor.s: src/receptor.cpp.s
+
+.PHONY : src/receptor.s
+
+# target to generate assembly for a file
+src/receptor.cpp.s:
+	$(MAKE) -f CMakeFiles/receptor.dir/build.make CMakeFiles/receptor.dir/src/receptor.cpp.s
+.PHONY : src/receptor.cpp.s
+
 src/tabuleiro.o: src/tabuleiro.cpp.o
 
 .PHONY : src/tabuleiro.o
@@ -410,8 +450,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... doc"
+	@echo "... edit_cache"
+	@echo "... receptor"
 	@echo "... controller"
 	@echo "... teclado"
 	@echo "... view"
@@ -431,6 +472,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/receptor.o"
+	@echo "... src/receptor.i"
+	@echo "... src/receptor.s"
 	@echo "... src/tabuleiro.o"
 	@echo "... src/tabuleiro.i"
 	@echo "... src/tabuleiro.s"

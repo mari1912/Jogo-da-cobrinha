@@ -9,6 +9,7 @@ Cobra::Cobra(int x_atual, float vx, int y_atual, float vy) {
     this->vx = vx;
     this->y_atual = y_atual;
     this->vy = vy;
+    direcao = 2; //direcao inicial para qual a cobra vai -> nesse caso, para a direita
     cobrinha_horizontal.push_back(x_atual);
     cobrinha_vertical.push_back(y_atual);
     vida = 1;
@@ -40,6 +41,10 @@ int Cobra::get_vida() {
  * @return vy */ 
 float Cobra::get_vy() {
     return vy;
+}
+
+int Cobra::get_direcao() {
+    return direcao;
 }
 
 std::vector<int> Cobra::get_cobrinha_horizontal() {
@@ -82,6 +87,10 @@ void Cobra::set_cobrinha_aumento(int x, int y) {
 
 void Cobra::set_vida(int nova_vida) {
     vida = nova_vida;
+}
+
+void Cobra::set_direcao(int nova_direcao) {
+    direcao = nova_direcao;
 }
 
 void Cobra::salvar_jogo(){

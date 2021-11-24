@@ -85,6 +85,7 @@ MeuJogo: libtabuleiro.a
 MeuJogo: libteclado.a
 MeuJogo: libview.a
 MeuJogo: libcontroller.a
+MeuJogo: libreceptor.a
 MeuJogo: CMakeFiles/MeuJogo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable MeuJogo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MeuJogo.dir/link.txt --verbose=$(VERBOSE)
