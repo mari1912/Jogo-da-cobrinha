@@ -45,20 +45,19 @@ void Receptor::recebe( ) {
             vetor_endereco.push_back(remote_endpoint);
         }
         /*
-        std::cout<< "vetor" <<vetor_endereco.size() << std::endl;
+        //std::cout<< "vetor" <<vetor_endereco.size() << std::endl;
         //std::cout<<recebido["tecla"]<<std::endl;
         for (int i = 0; i < vetor_endereco.size();i++){
             if(vetor_endereco[i]== remote_endpoint){
                 indice = i;
                 break;
             }
-
-            
+                
             else if(vetor_endereco.size() -1  == i){
                 vetor_endereco.push_back(remote_endpoint);
                 std::cout<< "dentro do laco" << std::endl;
             }
-
+            
         }
         */
         

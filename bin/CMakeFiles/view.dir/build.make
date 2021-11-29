@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha
+CMAKE_SOURCE_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin
+CMAKE_BINARY_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/view.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/view.dir/flags.make
 
 CMakeFiles/view.dir/src/view.cpp.o: CMakeFiles/view.dir/flags.make
 CMakeFiles/view.dir/src/view.cpp.o: ../src/view.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/view.dir/src/view.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/view.dir/src/view.cpp.o -c /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/view.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/view.dir/src/view.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/view.dir/src/view.cpp.o -c /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/view.cpp
 
 CMakeFiles/view.dir/src/view.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/view.dir/src/view.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/view.cpp > CMakeFiles/view.dir/src/view.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/view.cpp > CMakeFiles/view.dir/src/view.cpp.i
 
 CMakeFiles/view.dir/src/view.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/view.dir/src/view.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/view.cpp -o CMakeFiles/view.dir/src/view.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/view.cpp -o CMakeFiles/view.dir/src/view.cpp.s
 
 # Object files for target view
 view_OBJECTS = \
@@ -80,7 +80,7 @@ view_EXTERNAL_OBJECTS =
 libview.a: CMakeFiles/view.dir/src/view.cpp.o
 libview.a: CMakeFiles/view.dir/build.make
 libview.a: CMakeFiles/view.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libview.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libview.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/view.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/view.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/view.dir/clean:
 .PHONY : CMakeFiles/view.dir/clean
 
 CMakeFiles/view.dir/depend:
-	cd /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles/view.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mariana/Documentos/ea872/Jogo-da-cobrinha /home/mariana/Documentos/ea872/Jogo-da-cobrinha /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/view.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/view.dir/depend
 

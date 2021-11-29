@@ -24,7 +24,7 @@ class Controller {
         void verifica_posicao();                    //Não deixa a cobrinha sair do tabuleiro
         void comeu();                               //vê se a cobrinha comeu a fruta
         void posicao_fruta();                       //calcula a nova posição da fruta
-        void cresce(Cobra cobra);                              //a cobrinha cresce
-        void anda(Cobra cobra);
-        void morreu(Cobra cobra);
+        void cresce(int index);                              //a cobrinha cresce
+        void anda(int index);
+        void morreu(int index);
 };

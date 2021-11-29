@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/controller.cpp" "/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles/controller.dir/src/controller.cpp.o"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.cpp" "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/controller.dir/src/controller.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

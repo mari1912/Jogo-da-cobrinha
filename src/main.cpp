@@ -50,27 +50,33 @@ int main() {
     std::shared_ptr<Receptor>r(new Receptor(fruta));
     
     Cobra cobra1(0,0,0,0);
+    Cobra cobra2(43,0,0,0);
+    Cobra cobra3(0,0,32,0);
+    Cobra cobra4(43,0,32,0);
     
     vetor_cobras.push_back(cobra1);
 
     std::thread t1(&Receptor::recebe, r);
-    
-  /*  while(vetor_endereco.size() <4){
+
+    /*
+    while(vetor_endereco.size() <4){
         if(teclado -> get_iniciar() ==1){
             break;
         }
+
         vetor_endereco.push_back(udp::endpoint());
         if(vetor_endereco.size() == 0){
-            cobra1.set_vx(1);
-           
+            cobra1.set_vx(1);           
         }
+
         else if(vetor_endereco.size() ==1 ){
             cobra1.set_vx(-1);
             cobra1.set_x_atual(43);
-
+            cobra1.set_y_atual(0);
         }
         else if(vetor_endereco.size() ==2 ){
             cobra1.set_vx(1);
+            cobra1.set_x_atual(0);
             cobra1.set_y_atual(32);
            
         }
@@ -88,7 +94,24 @@ int main() {
 
         //espera que a tecla espaco seja apertada antes de iniciar o jogo
         teclado->inicia_jogo();
-        
+/*
+        if(teclado->get_iniciar() == 0) {
+            /*
+            if (vetor_endereco.size() == 1) {
+                vetor_cobras.push_back(cobra1);
+            }
+            /
+            if(vetor_endereco.size() == 2) {
+                vetor_cobras.push_back(cobra2);
+            }
+            else if(vetor_endereco.size() == 3) {
+                vetor_cobras.push_back(cobra3);
+            }
+            else if(vetor_endereco.size() == 4) {
+                vetor_cobras.push_back(cobra4);
+            }
+        }
+  */      
         //caso o usuario feche a janela do jogo
         while (SDL_PollEvent(&evento)) {
             if (evento.type == SDL_QUIT) {
@@ -112,7 +135,7 @@ int main() {
 
         //se o jogo estiver iniciado, o controller o executa
         if(teclado->get_iniciar() == 1) {
-            std::cout<<vetor_cobras[0].get_direcao() << std::endl;
+            //std::cout<<vetor_cobras[0].get_direcao() << std::endl;
             //precisa mudar isso depois 
             controller->muda_posicao(vetor_cobras[0].get_direcao(),0);
            // std::cout<< vetor_cobras[0].get_vx() << std::endl;

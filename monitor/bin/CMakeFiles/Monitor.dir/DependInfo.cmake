@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/main.cpp" "/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles/Monitor.dir/src/main.cpp.o"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/main.cpp" "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles/Monitor.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,11 +15,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles/cobra.dir/DependInfo.cmake"
-  "/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles/fruta.dir/DependInfo.cmake"
-  "/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles/tabuleiro.dir/DependInfo.cmake"
-  "/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles/view.dir/DependInfo.cmake"
-  "/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles/teclado.dir/DependInfo.cmake"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles/cobra.dir/DependInfo.cmake"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles/fruta.dir/DependInfo.cmake"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles/tabuleiro.dir/DependInfo.cmake"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles/view.dir/DependInfo.cmake"
+  "/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles/teclado.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -43,6 +43,7 @@ int main() {
     std::shared_ptr<Fruta>fruta(new Fruta(tabuleiro));
     std::shared_ptr<Teclado>teclado(new Teclado(fruta));
     std::shared_ptr<View>view(new View(fruta, tabuleiro));
+    
     Cobra cobra1(0,0,0,0);
     vetor_cobras.push_back(cobra1);
 
@@ -93,7 +94,7 @@ int main() {
         std::stringstream(dados_recebidos) >> j;
  //       std::cout<<"Recebido pelo monitor"<<j<<std::endl;
 
-       // for ( int i =0; i < vetor_cobras.size(); i++){
+        for ( int i =0; i < vetor_cobras.size(); i++){
             vetor_cobras[0].set_vx(j["cobra"][0]["vx"]);
             vetor_cobras[0].set_vy(j["cobra"][0]["vy"]);
             vetor_cobras[0].set_x_atual(j["cobra"][0]["x_atual"]);
@@ -102,9 +103,8 @@ int main() {
             vetor_cobras[0].set_cobrinha_vertical(j["cobra"][0]["vertical"]);
             vetor_cobras[0].set_cobrinha_horizontal(j["cobra"][0]["horizontal"]);        
         
-        //}
+        }
        
-    
         rodando = j["rodando"];
 
         fruta->set_x_fruta(j["fruta"]["x_fruta"]);

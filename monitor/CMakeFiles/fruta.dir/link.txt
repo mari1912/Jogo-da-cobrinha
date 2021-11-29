@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfruta.a  CMakeFiles/fruta.dir/src/fruta.cpp.o
+/usr/bin/ranlib libfruta.a

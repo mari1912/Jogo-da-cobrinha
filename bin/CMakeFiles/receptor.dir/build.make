@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha
+CMAKE_SOURCE_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin
+CMAKE_BINARY_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/receptor.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/receptor.dir/flags.make
 
 CMakeFiles/receptor.dir/src/receptor.cpp.o: CMakeFiles/receptor.dir/flags.make
 CMakeFiles/receptor.dir/src/receptor.cpp.o: ../src/receptor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/receptor.dir/src/receptor.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/receptor.dir/src/receptor.cpp.o -c /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/receptor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/receptor.dir/src/receptor.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/receptor.dir/src/receptor.cpp.o -c /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/receptor.cpp
 
 CMakeFiles/receptor.dir/src/receptor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/receptor.dir/src/receptor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/receptor.cpp > CMakeFiles/receptor.dir/src/receptor.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/receptor.cpp > CMakeFiles/receptor.dir/src/receptor.cpp.i
 
 CMakeFiles/receptor.dir/src/receptor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/receptor.dir/src/receptor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/receptor.cpp -o CMakeFiles/receptor.dir/src/receptor.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/receptor.cpp -o CMakeFiles/receptor.dir/src/receptor.cpp.s
 
 # Object files for target receptor
 receptor_OBJECTS = \
@@ -80,7 +80,7 @@ receptor_EXTERNAL_OBJECTS =
 libreceptor.a: CMakeFiles/receptor.dir/src/receptor.cpp.o
 libreceptor.a: CMakeFiles/receptor.dir/build.make
 libreceptor.a: CMakeFiles/receptor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libreceptor.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libreceptor.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/receptor.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/receptor.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/receptor.dir/clean:
 .PHONY : CMakeFiles/receptor.dir/clean
 
 CMakeFiles/receptor.dir/depend:
-	cd /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles/receptor.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mariana/Documentos/ea872/Jogo-da-cobrinha /home/mariana/Documentos/ea872/Jogo-da-cobrinha /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/receptor.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/receptor.dir/depend
 

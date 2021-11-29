@@ -1,0 +1,2 @@
+/usr/bin/ar qc libreceptor.a  CMakeFiles/receptor.dir/src/receptor.cpp.o
+/usr/bin/ranlib libreceptor.a

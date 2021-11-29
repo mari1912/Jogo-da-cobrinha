@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtabuleiro.a  CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.o
+/usr/bin/ranlib libtabuleiro.a

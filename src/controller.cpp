@@ -62,16 +62,16 @@ void Controller::verifica_posicao(){
     for( int i = 0; i < vetor_cobras.size();i++){
         if((tabuleiro->get_tabuleiro_vertical()-tabuleiro->get_bloco_vertical()) < vetor_cobras[i].get_y_atual() || 0 > vetor_cobras[i].get_y_atual()){
                 vetor_cobras[i].set_vy(0);    
-                morreu(vetor_cobras[i]);
+                morreu(i);
             }
             if(tabuleiro->get_tabuleiro_horizontal()-tabuleiro->get_bloco_horizontal() < vetor_cobras[i].get_x_atual() || 0 > vetor_cobras[i].get_x_atual()){
                 vetor_cobras[i].set_vx(0);
-                morreu(vetor_cobras[i]);
+                morreu(i);
             }
             for (int j = 1; j < vetor_cobras[i].get_cobrinha_horizontal().size(); j++) {
                 if (vetor_cobras[i].get_x_atual() == vetor_cobras[i].get_cobrinha_horizontal()[j]) {
                     if (vetor_cobras[i].get_y_atual() == vetor_cobras[i].get_cobrinha_vertical()[j]) {
-                        morreu(vetor_cobras[i]);
+                        morreu(i);
                     }
                 }
             }
@@ -91,12 +91,11 @@ void Controller::comeu() {
         if ((fruta->get_y_fruta() <= vetor_cobras[i].get_y_atual()) && (fruta->get_y_fruta() >= vetor_cobras[i].get_y_atual())) {
             //calcula uma nova posição para a fruta
             posicao_fruta();
-            std::cout<<"comi a fruta" <<std::endl;
-            cresce(vetor_cobras[i]);
+            cresce(i);
         }
     }
     else {
-        anda(vetor_cobras[i]);
+        anda(i);
     }
     }
     
@@ -117,37 +116,37 @@ void Controller::posicao_fruta() {
 
 
 /** @brief faz a cobrinha crescer */ 
-void Controller::cresce(Cobra cobra) {
+void Controller::cresce(int index) {
     int x_ultimo, y_ultimo, fim_x, fim_y;
-    fim_x = cobra.get_cobrinha_horizontal().back();
-    fim_y = cobra.get_cobrinha_vertical().back(); 
-    x_ultimo = cobra.get_cobrinha_horizontal()[fim_x];
-    y_ultimo = cobra.get_cobrinha_vertical()[fim_y];
-    anda(cobra);
-    cobra.set_cobrinha_aumento(x_ultimo, y_ultimo);
+    fim_x = vetor_cobras[index].get_cobrinha_horizontal().back();
+    fim_y = vetor_cobras[index].get_cobrinha_vertical().back(); 
+    x_ultimo = vetor_cobras[index].get_cobrinha_horizontal()[fim_x];
+    y_ultimo = vetor_cobras[index].get_cobrinha_vertical()[fim_y];
+    anda(index);
+    vetor_cobras[index].set_cobrinha_aumento(x_ultimo, y_ultimo);
 }
 
 /** @brief faz a cobrinha andar */ 
-void Controller::anda(Cobra cobra) {
-    int tamanho = cobra.get_cobrinha_horizontal().size();
+void Controller::anda(int index) {
+    int tamanho = vetor_cobras[index].get_cobrinha_horizontal().size();
     
     for (int i = tamanho-1; i >= 0; i--) {
         if (i == 0) {
-            cobra.set_cobrinha_horizontal(i, cobra.get_x_atual());
-            cobra.set_cobrinha_vertical(i, cobra.get_y_atual());
+            vetor_cobras[index].set_cobrinha_horizontal(i, vetor_cobras[index].get_x_atual());
+            vetor_cobras[index].set_cobrinha_vertical(i, vetor_cobras[index].get_y_atual());
         }
         else {
-            cobra.set_cobrinha_horizontal(i, cobra.get_cobrinha_horizontal()[i-1]);
-            cobra.set_cobrinha_vertical(i, cobra.get_cobrinha_vertical()[i-1]);
+            vetor_cobras[index].set_cobrinha_horizontal(i, vetor_cobras[index].get_cobrinha_horizontal()[i-1]);
+            vetor_cobras[index].set_cobrinha_vertical(i, vetor_cobras[index].get_cobrinha_vertical()[i-1]);
         }
     }
 }
 
 /** @brief faz a cobrinha morrer */ 
-void Controller::morreu(Cobra cobra) {
-    cobra.set_vx(0);
-    cobra.set_vy(0);
-    cobra.set_vida(0);
+void Controller::morreu(int index) {
+    vetor_cobras[index].set_vx(0);
+    vetor_cobras[index].set_vy(0);
+    vetor_cobras[index].set_vida(0);
     std::cout<<"GAME OVER"<<std::endl;
     //exit(0);
 }

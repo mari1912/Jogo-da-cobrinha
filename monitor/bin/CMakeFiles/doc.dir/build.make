@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor
+CMAKE_SOURCE_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin
+CMAKE_BINARY_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin
 
 # Utility rule file for doc.
 
@@ -54,9 +54,9 @@ CMAKE_BINARY_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/moni
 include CMakeFiles/doc.dir/progress.make
 
 CMakeFiles/doc: Doxyfile.doc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generate API documentation for doc"
-	cd /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor && /usr/bin/cmake -E make_directory /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin
-	cd /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor && /usr/bin/doxygen /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/Doxyfile.doc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generate API documentation for doc"
+	cd /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor && /usr/bin/cmake -E make_directory /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin
+	cd /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor && /usr/bin/doxygen /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/Doxyfile.doc
 
 doc: CMakeFiles/doc
 doc: CMakeFiles/doc.dir/build.make
@@ -73,6 +73,6 @@ CMakeFiles/doc.dir/clean:
 .PHONY : CMakeFiles/doc.dir/clean
 
 CMakeFiles/doc.dir/depend:
-	cd /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles/doc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles/doc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doc.dir/depend
 

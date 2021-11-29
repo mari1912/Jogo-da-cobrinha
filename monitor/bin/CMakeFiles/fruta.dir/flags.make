@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/include 
+CXX_INCLUDES = -I/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/include 
 

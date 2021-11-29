@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/MeuJogo.dir/src/main.cpp.o  -o MeuJogo  libcobra.a libfruta.a libtabuleiro.a libteclado.a libview.a libcontroller.a libreceptor.a -lSDL2 -lSDL2_image -lpthread 
