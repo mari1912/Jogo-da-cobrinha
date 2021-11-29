@@ -1,6 +1,7 @@
 #include <vector>
 #pragma once
 
+
 class Cobra {
 
     private: 
@@ -28,3 +29,5 @@ class Cobra {
         void salvar_jogo();
         void recuperar_jogo();
 };
+
+extern std::vector<Cobra> vetor_cobras;

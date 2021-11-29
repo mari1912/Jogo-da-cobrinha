@@ -31,10 +31,14 @@ SDL2/SDL.h
 -
 SDL2/SDL_image.h
 -
+vector
+-
 
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/view.cpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/view.cpp
 iostream
 -
 view.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/view.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/view.hpp
+cobra.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/cobra.hpp
 

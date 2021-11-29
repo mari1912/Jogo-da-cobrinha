@@ -3,13 +3,14 @@
 #include "tabuleiro.hpp"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <vector>
 
 #pragma once
 
 class View {
   
   private:
-    std::shared_ptr<Cobra>cobra;
+    
     std::shared_ptr<Fruta>fruta;
     std::shared_ptr<Tabuleiro>tabuleiro;
     const int SCREEN_WIDTH = 860;
@@ -20,7 +21,7 @@ class View {
     SDL_Renderer *renderer;
 
   public:
-    View(std::shared_ptr<Cobra>cobra, std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro); //construtor
+    View(std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro); //construtor
     void finaliza();                                                                                     //finaliza o jogo (as imagens do jogo fecham)
     void render();                                                                                       //monstra as imagens na tela
 };

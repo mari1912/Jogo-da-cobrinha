@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor
+CMAKE_SOURCE_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin
+CMAKE_BINARY_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/fruta.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/fruta.dir/flags.make
 
 CMakeFiles/fruta.dir/src/fruta.cpp.o: CMakeFiles/fruta.dir/flags.make
 CMakeFiles/fruta.dir/src/fruta.cpp.o: ../src/fruta.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/fruta.dir/src/fruta.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fruta.dir/src/fruta.cpp.o -c /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/fruta.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/fruta.dir/src/fruta.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fruta.dir/src/fruta.cpp.o -c /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/fruta.cpp
 
 CMakeFiles/fruta.dir/src/fruta.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fruta.dir/src/fruta.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/fruta.cpp > CMakeFiles/fruta.dir/src/fruta.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/fruta.cpp > CMakeFiles/fruta.dir/src/fruta.cpp.i
 
 CMakeFiles/fruta.dir/src/fruta.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fruta.dir/src/fruta.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/fruta.cpp -o CMakeFiles/fruta.dir/src/fruta.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/fruta.cpp -o CMakeFiles/fruta.dir/src/fruta.cpp.s
 
 # Object files for target fruta
 fruta_OBJECTS = \
@@ -80,7 +80,7 @@ fruta_EXTERNAL_OBJECTS =
 libfruta.a: CMakeFiles/fruta.dir/src/fruta.cpp.o
 libfruta.a: CMakeFiles/fruta.dir/build.make
 libfruta.a: CMakeFiles/fruta.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libfruta.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libfruta.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/fruta.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fruta.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/fruta.dir/clean:
 .PHONY : CMakeFiles/fruta.dir/clean
 
 CMakeFiles/fruta.dir/depend:
-	cd /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles/fruta.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles/fruta.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/fruta.dir/depend
 

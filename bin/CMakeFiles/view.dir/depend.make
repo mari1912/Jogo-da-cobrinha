@@ -3,6 +3,7 @@
 
 CMakeFiles/view.dir/src/view.cpp.o: ../include/cobra.hpp
 CMakeFiles/view.dir/src/view.cpp.o: ../include/fruta.hpp
+CMakeFiles/view.dir/src/view.cpp.o: ../include/receptor.hpp
 CMakeFiles/view.dir/src/view.cpp.o: ../include/tabuleiro.hpp
 CMakeFiles/view.dir/src/view.cpp.o: ../include/view.hpp
 CMakeFiles/view.dir/src/view.cpp.o: ../src/view.cpp

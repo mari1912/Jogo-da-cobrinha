@@ -338,11 +338,11 @@ vector
 
 ../include/tabuleiro.hpp
 
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/fruta.cpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/fruta.cpp
 fruta.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/fruta.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/fruta.hpp
 json.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/json.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/json.hpp
 fstream
 -
 iostream

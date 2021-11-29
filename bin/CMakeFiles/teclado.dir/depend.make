@@ -3,6 +3,7 @@
 
 CMakeFiles/teclado.dir/src/teclado.cpp.o: ../include/cobra.hpp
 CMakeFiles/teclado.dir/src/teclado.cpp.o: ../include/fruta.hpp
+CMakeFiles/teclado.dir/src/teclado.cpp.o: ../include/receptor.hpp
 CMakeFiles/teclado.dir/src/teclado.cpp.o: ../include/tabuleiro.hpp
 CMakeFiles/teclado.dir/src/teclado.cpp.o: ../include/teclado.hpp
 CMakeFiles/teclado.dir/src/teclado.cpp.o: ../src/teclado.cpp

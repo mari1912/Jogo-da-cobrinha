@@ -347,12 +347,18 @@ cobra.hpp
 ../include/cobra.hpp
 fruta.hpp
 ../include/fruta.hpp
+vector
+-
+fstream
+-
+boost/asio.hpp
+-
 
 ../include/tabuleiro.hpp
 
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/receptor.cpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/receptor.cpp
 receptor.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/receptor.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/receptor.hpp
 fstream
 -
 sstream
@@ -360,7 +366,7 @@ sstream
 boost/asio.hpp
 -
 json.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/json.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/json.hpp
 iostream
 -
 string

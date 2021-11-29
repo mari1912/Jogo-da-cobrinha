@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor
+CMAKE_SOURCE_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin
+CMAKE_BINARY_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tabuleiro.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/tabuleiro.dir/flags.make
 
 CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.o: CMakeFiles/tabuleiro.dir/flags.make
 CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.o: ../src/tabuleiro.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.o -c /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/tabuleiro.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.o -c /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/tabuleiro.cpp
 
 CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/tabuleiro.cpp > CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/tabuleiro.cpp > CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.i
 
 CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/tabuleiro.cpp -o CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/tabuleiro.cpp -o CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.s
 
 # Object files for target tabuleiro
 tabuleiro_OBJECTS = \
@@ -80,7 +80,7 @@ tabuleiro_EXTERNAL_OBJECTS =
 libtabuleiro.a: CMakeFiles/tabuleiro.dir/src/tabuleiro.cpp.o
 libtabuleiro.a: CMakeFiles/tabuleiro.dir/build.make
 libtabuleiro.a: CMakeFiles/tabuleiro.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libtabuleiro.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libtabuleiro.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/tabuleiro.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tabuleiro.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/tabuleiro.dir/clean:
 .PHONY : CMakeFiles/tabuleiro.dir/clean
 
 CMakeFiles/tabuleiro.dir/depend:
-	cd /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/bin/CMakeFiles/tabuleiro.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/bin/CMakeFiles/tabuleiro.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tabuleiro.dir/depend
 

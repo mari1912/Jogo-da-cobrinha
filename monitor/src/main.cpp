@@ -16,6 +16,7 @@
 
 using boost::asio::ip::udp;
 using nlohmann::json;
+std::vector<Cobra> vetor_cobras;
 
 /**
  * @brief Jogo da Cobrinha desenvolvido para a disciplina EA872
@@ -37,12 +38,13 @@ int main() {
     json j;
     std::string dados_enviados;
     std::ifstream f;
-    std::shared_ptr<Cobra>cobra(new Cobra(0,1,0,0));
+    //std::shared_ptr<Cobra>cobra(new Cobra(0,1,0,0));
     std::shared_ptr<Tabuleiro>tabuleiro(new Tabuleiro());
     std::shared_ptr<Fruta>fruta(new Fruta(tabuleiro));
-    std::shared_ptr<Teclado>teclado(new Teclado(cobra, fruta));
-    std::shared_ptr<View>view(new View(cobra, fruta, tabuleiro));
-    
+    std::shared_ptr<Teclado>teclado(new Teclado(fruta));
+    std::shared_ptr<View>view(new View(fruta, tabuleiro));
+    Cobra cobra1(0,0,0,0);
+    vetor_cobras.push_back(cobra1);
 
     boost::asio::io_service io_service;
 
@@ -54,7 +56,7 @@ int main() {
     boost::asio::ip::address::from_string("127.0.0.1");
 
     udp::endpoint remote_endpoint(ip_remoto, 9001);
-       
+    
     while(rodando) {
 
         while (SDL_PollEvent(&evento)) {
@@ -63,9 +65,19 @@ int main() {
             }
         }
 
-        if(cobra->get_vida() == 0) {
+        //se a cobra morrer
+        int cobras_vivas = 0;
+        for (int i = 0; i < vetor_cobras.size();i++){
+            if(vetor_cobras[i].get_vida() == 1){
+                 cobras_vivas = cobras_vivas +1 ;
+            }
+
+        }
+
+        if(cobras_vivas == 0){
             rodando = false;
         }
+        
 
         tec["tecla"] = teclado->le_teclado();
  //       std::cout<<tec["tecla"]<<std::endl;
@@ -81,16 +93,17 @@ int main() {
         std::stringstream(dados_recebidos) >> j;
  //       std::cout<<"Recebido pelo monitor"<<j<<std::endl;
 
-        cobra->set_vx(j["cobra"]["vx"]);
-        cobra->set_vy(j["cobra"]["vy"]);
-        cobra->set_x_atual(j["cobra"]["x_atual"]);
-        cobra->set_y_atual(j["cobra"]["y_atual"]);
-        cobra->set_vida(j["cobra"]["vida"]);
-
-        for (int i=0; i<j["cobra"]["tamanho"]; i++) {
-            cobra->set_cobrinha_vertical(j["cobra"]["vertical"]);
-            cobra->set_cobrinha_horizontal(j["cobra"]["horizontal"]);        
-        }
+       // for ( int i =0; i < vetor_cobras.size(); i++){
+            vetor_cobras[0].set_vx(j["cobra"][0]["vx"]);
+            vetor_cobras[0].set_vy(j["cobra"][0]["vy"]);
+            vetor_cobras[0].set_x_atual(j["cobra"][0]["x_atual"]);
+            vetor_cobras[0].set_y_atual(j["cobra"][0]["y_atual"]);
+            vetor_cobras[0].set_vida(j["cobra"][0]["vida"]);
+            vetor_cobras[0].set_cobrinha_vertical(j["cobra"][0]["vertical"]);
+            vetor_cobras[0].set_cobrinha_horizontal(j["cobra"][0]["horizontal"]);        
+        
+        //}
+       
     
         rodando = j["rodando"];
 

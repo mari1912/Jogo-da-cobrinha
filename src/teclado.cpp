@@ -1,14 +1,14 @@
 #include "teclado.hpp"
+#include "receptor.hpp"
 
 /**
  * @brief  funcao que recebe os comandos do teclado
  */ 
 
-Teclado::Teclado(std::shared_ptr<Cobra>cobra,std::shared_ptr<Fruta>fruta) {
+Teclado::Teclado(std::shared_ptr<Fruta>fruta) {
     state = SDL_GetKeyboardState(nullptr);
     seta = 0;
     iniciar = 0;
-    this->cobra =  cobra;
     this->fruta = fruta;
     
 }
@@ -40,13 +40,19 @@ int Teclado::le_teclado() {
 
     //Se clicar na tecla s, o jogo e salvo
     if(state[SDL_SCANCODE_S]){
-        cobra-> salvar_jogo();
+        for(int i = 0; i < vetor_cobras.size();i++){
+            vetor_cobras[i].salvar_jogo();
+        }
+        
         fruta -> salvar_jogo_fruta();
     }
 
     //se clicar na tecla r, o jogo e recuperado
     if(state[SDL_SCANCODE_R]){
-        cobra-> recuperar_jogo();
+        for(int i = 0; i < vetor_cobras.size();i++){
+            vetor_cobras[i].recuperar_jogo();
+        }
+
         fruta -> recuperar_jogo_fruta();
     }
 
