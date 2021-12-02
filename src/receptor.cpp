@@ -6,7 +6,6 @@
 #include <iostream>
 #include <string>
 
-
 using boost::asio::ip::udp;
 using nlohmann::json;
 std::vector<udp::endpoint> vetor_endereco;
@@ -16,12 +15,15 @@ Receptor::Receptor(std::shared_ptr<Fruta>fruta) {
     this->fruta = fruta;
 }
 
-void Receptor::recebe( ) {
+void Receptor::recebe() {
     char tecla[1000];
     bool rodando = 1;
     int indice = 0;
     json recebido;
     json enviar;
+    Cobra cobra2(43*19,0,0,0);
+    Cobra cobra3(0,0,32*19,0);
+    Cobra cobra4(43*19,0,32*19,0);
     std::string mensagem_dados;
     boost::asio::io_service my_io_service; // Conecta com o SO
 
@@ -41,32 +43,29 @@ void Receptor::recebe( ) {
         
         std::stringstream(tecla) >> recebido;
         //std::cout<< recebido << std::endl;
+
         if(vetor_endereco.size() == 0){
             vetor_endereco.push_back(remote_endpoint);
         }
-        /*
-        //std::cout<< "vetor" <<vetor_endereco.size() << std::endl;
-        //std::cout<<recebido["tecla"]<<std::endl;
-        for (int i = 0; i < vetor_endereco.size();i++){
-            if(vetor_endereco[i]== remote_endpoint){
-                indice = i;
-                break;
-            }
-                
-            else if(vetor_endereco.size() -1  == i){
-                vetor_endereco.push_back(remote_endpoint);
-                std::cout<< "dentro do laco" << std::endl;
-            }
-            
+        else if(vetor_endereco.size() == 1 && remote_endpoint != vetor_endereco[0]){
+            vetor_endereco.push_back(remote_endpoint);
+            vetor_cobras.push_back(cobra2);
         }
-        */
+        else if(vetor_endereco.size() == 2 && remote_endpoint != vetor_endereco[0] && remote_endpoint != vetor_endereco[1]){
+            vetor_endereco.push_back(remote_endpoint);
+            vetor_cobras.push_back(cobra3);
+        }
+        else if(vetor_endereco.size() == 3 && remote_endpoint != vetor_endereco[0] && remote_endpoint != vetor_endereco[1] && remote_endpoint != vetor_endereco[2]){
+            vetor_endereco.push_back(remote_endpoint);
+            vetor_cobras.push_back(cobra4);
+        }
         
         vetor_cobras[indice].set_direcao(recebido["tecla"]);
         //std::cout<<vetor_cobras[indice].get_direcao() << std::endl;
         for ( int i =0; i < vetor_cobras.size();i++){
             //remote_endpoint = vetor_endereco[i];
            
-            enviar["indice"][indice] = indice;
+            enviar["indice"] = indice;
             enviar["cobra"][indice]["vx"] = vetor_cobras[indice].get_vx();
             enviar["cobra"][indice]["vy"] = vetor_cobras[indice].get_vy();
             enviar["cobra"][indice]["x_atual"] = vetor_cobras[indice].get_x_atual();
@@ -86,7 +85,6 @@ void Receptor::recebe( ) {
          
 
     }
-    i = 1;
 
 }
 

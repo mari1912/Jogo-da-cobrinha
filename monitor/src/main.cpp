@@ -36,6 +36,7 @@ int main() {
     char dados_recebidos[1000];
     json tec;
     json j;
+    int indice;
     std::string dados_enviados;
     std::ifstream f;
     //std::shared_ptr<Cobra>cobra(new Cobra(0,1,0,0));
@@ -43,9 +44,6 @@ int main() {
     std::shared_ptr<Fruta>fruta(new Fruta(tabuleiro));
     std::shared_ptr<Teclado>teclado(new Teclado(fruta));
     std::shared_ptr<View>view(new View(fruta, tabuleiro));
-    
-    Cobra cobra1(0,0,0,0);
-    vetor_cobras.push_back(cobra1);
 
     boost::asio::io_service io_service;
 
@@ -58,6 +56,10 @@ int main() {
 
     udp::endpoint remote_endpoint(ip_remoto, 9001);
     
+
+    Cobra cobra1(0,0,0,0);
+    vetor_cobras.push_back(cobra1);
+
     while(rodando) {
 
         while (SDL_PollEvent(&evento)) {
@@ -93,17 +95,17 @@ int main() {
     
         std::stringstream(dados_recebidos) >> j;
  //       std::cout<<"Recebido pelo monitor"<<j<<std::endl;
-
-        for ( int i =0; i < vetor_cobras.size(); i++){
-            vetor_cobras[0].set_vx(j["cobra"][0]["vx"]);
-            vetor_cobras[0].set_vy(j["cobra"][0]["vy"]);
-            vetor_cobras[0].set_x_atual(j["cobra"][0]["x_atual"]);
-            vetor_cobras[0].set_y_atual(j["cobra"][0]["y_atual"]);
-            vetor_cobras[0].set_vida(j["cobra"][0]["vida"]);
-            vetor_cobras[0].set_cobrinha_vertical(j["cobra"][0]["vertical"]);
-            vetor_cobras[0].set_cobrinha_horizontal(j["cobra"][0]["horizontal"]);        
+        indice = j["indice"];
+        //for ( int i =0; i < vetor_cobras.size(); i++){
+        vetor_cobras[indice].set_vx(j["cobra"][indice]["vx"]);
+        vetor_cobras[indice].set_vy(j["cobra"][indice]["vy"]);
+        vetor_cobras[indice].set_x_atual(j["cobra"][indice]["x_atual"]);
+        vetor_cobras[indice].set_y_atual(j["cobra"][indice]["y_atual"]);
+        vetor_cobras[indice].set_vida(j["cobra"][indice]["vida"]);
+        vetor_cobras[indice].set_cobrinha_vertical(j["cobra"][indice]["vertical"]);
+        vetor_cobras[indice].set_cobrinha_horizontal(j["cobra"][indice]["horizontal"]);        
         
-        }
+        //}
        
         rodando = j["rodando"];
 

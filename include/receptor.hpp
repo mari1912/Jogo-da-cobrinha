@@ -1,6 +1,7 @@
 #include <memory>
 #include "cobra.hpp"
 #include "fruta.hpp"
+#include "teclado.hpp"
 #include <vector>
 #include <fstream>
 #include <boost/asio.hpp>

@@ -363,6 +363,8 @@ cobra.hpp
 ../include/cobra.hpp
 fruta.hpp
 ../include/fruta.hpp
+teclado.hpp
+../include/teclado.hpp
 vector
 -
 fstream

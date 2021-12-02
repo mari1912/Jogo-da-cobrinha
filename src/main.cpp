@@ -50,11 +50,17 @@ int main() {
     std::shared_ptr<Receptor>r(new Receptor(fruta));
     
     Cobra cobra1(0,0,0,0);
-    Cobra cobra2(43,0,0,0);
-    Cobra cobra3(0,0,32,0);
-    Cobra cobra4(43,0,32,0);
+    Cobra cobra2(43*19,0,0,0);
+    Cobra cobra3(0,0,32*19,0);
+    Cobra cobra4(43*19,0,32*19,0);
     
     vetor_cobras.push_back(cobra1);
+    
+    /*
+    vetor_cobras.push_back(cobra2);
+    vetor_cobras.push_back(cobra3);
+    vetor_cobras.push_back(cobra4);
+    */
 
     std::thread t1(&Receptor::recebe, r);
 
@@ -96,22 +102,35 @@ int main() {
         teclado->inicia_jogo();
 /*
         if(teclado->get_iniciar() == 0) {
+            int incluso = 0;
+            for(int i = 0; i < vetor_endereco.size(); i++) {
+                if(vetor_endereco[i] == udp::endpoint()) {
+                    incluso = 1;
+                    break;
+                }
+            }
+            if (incluso == 0) {
+                vetor_endereco.push_back(udp::endpoint());    
+            }
             /*
             if (vetor_endereco.size() == 1) {
                 vetor_cobras.push_back(cobra1);
             }
             /
             if(vetor_endereco.size() == 2) {
+                std::cout<<"aqui"<<std::endl;
                 vetor_cobras.push_back(cobra2);
             }
             else if(vetor_endereco.size() == 3) {
+                std::cout<<"aqui1"<<std::endl;
                 vetor_cobras.push_back(cobra3);
             }
             else if(vetor_endereco.size() == 4) {
+                std::cout<<"aqui2"<<std::endl;
                 vetor_cobras.push_back(cobra4);
             }
         }
-  */      
+        */
         //caso o usuario feche a janela do jogo
         while (SDL_PollEvent(&evento)) {
             if (evento.type == SDL_QUIT) {

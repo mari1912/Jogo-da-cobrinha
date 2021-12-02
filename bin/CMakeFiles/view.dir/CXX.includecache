@@ -23,6 +23,8 @@ cobra.hpp
 ../include/cobra.hpp
 fruta.hpp
 ../include/fruta.hpp
+teclado.hpp
+../include/teclado.hpp
 vector
 -
 fstream
@@ -31,6 +33,18 @@ boost/asio.hpp
 -
 
 ../include/tabuleiro.hpp
+
+../include/teclado.hpp
+SDL2/SDL.h
+-
+cobra.hpp
+../include/cobra.hpp
+memory
+-
+fruta.hpp
+../include/fruta.hpp
+vector
+-
 
 ../include/view.hpp
 cobra.hpp
