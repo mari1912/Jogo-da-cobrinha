@@ -1,6 +1,5 @@
 #include <iostream>
 #include "view.hpp"
-#include "cobra.hpp"
 
 
 /** @brief Construtor */ 
@@ -50,23 +49,25 @@ View::View( std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){
     SDL_RenderClear (renderer);
 
    for ( int i =0; i < vetor_cobras.size(); i++){
-        if(i == 0){
-            SDL_SetRenderDrawColor (renderer, 0x22, 0x8b, 0x22, 0xFF); // cobra verde
-        }
-        
-        else if( i ==1){
-            SDL_SetRenderDrawColor (renderer, 0x99, 0xFF, 0xFF, 0xFF); // cobra verde piscina 
-        }
-        else if( i == 2 ){
-            SDL_SetRenderDrawColor (renderer, 0x99, 0x00, 0x99, 0xFF); // cobra roxo
-        }
-        else if( i == 3 ){
-            SDL_SetRenderDrawColor (renderer, 0xFF, 0xFF, 0x00, 0xFF); // cobra amarela
-        }
-        for (int j = 0; j < vetor_cobras[i].get_cobrinha_horizontal().size(); j++) {
-        bloco.x = vetor_cobras[i].get_cobrinha_horizontal()[j];
-        bloco.y = vetor_cobras[i].get_cobrinha_vertical()[j];
-        SDL_RenderFillRect(renderer, &bloco);
+        if(vetor_cobras[i].get_vida() == 1) {
+            if(i == 0){
+                SDL_SetRenderDrawColor (renderer, 0x22, 0x8b, 0x22, 0xFF); // cobra verde
+            }
+            
+            else if( i ==1){
+                SDL_SetRenderDrawColor (renderer, 0x99, 0xFF, 0xFF, 0xFF); // cobra verde piscina 
+            }
+            else if( i == 2 ){
+                SDL_SetRenderDrawColor (renderer, 0x99, 0x00, 0x99, 0xFF); // cobra roxo
+            }
+            else if( i == 3 ){
+                SDL_SetRenderDrawColor (renderer, 0xFF, 0xFF, 0x00, 0xFF); // cobra amarela
+            }
+            for (int j = 0; j < vetor_cobras[i].get_cobrinha_horizontal().size(); j++) {
+                bloco.x = vetor_cobras[i].get_cobrinha_horizontal()[j];
+                bloco.y = vetor_cobras[i].get_cobrinha_vertical()[j];
+                SDL_RenderFillRect(renderer, &bloco);
+            }
         }
     }
    

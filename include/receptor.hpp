@@ -20,5 +20,7 @@ class Receptor {
         Receptor(std::shared_ptr<Fruta>fruta);
         int get_i();
         void recebe();
+        void conecta();
+        void primeiro_envio();
         void set_i(int novo_i);
 };

@@ -19,7 +19,7 @@ Controller::Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Frut
 void Controller::muda_posicao(int pos, int indice) {
     //int pos = teclado->le_teclado();
     
-        if (pos == 1) {
+    if (pos == 1) {
         vetor_cobras[indice].set_vy(-1);
         vetor_cobras[indice].set_vx(0);
     }
@@ -60,25 +60,36 @@ void Controller::calcula_y_cobrinha() {
 /** @brief verifica se a cobrinha está dentro do tabuleiro, se trombou e se a cobrinha comeu a frutinha */ 
 void Controller::verifica_posicao(){
     for( int i = 0; i < vetor_cobras.size();i++){
-        if((tabuleiro->get_tabuleiro_vertical()-tabuleiro->get_bloco_vertical()) < vetor_cobras[i].get_y_atual() || 0 > vetor_cobras[i].get_y_atual()){
-                vetor_cobras[i].set_vy(0);    
-                morreu(i);
-            }
-            if(tabuleiro->get_tabuleiro_horizontal()-tabuleiro->get_bloco_horizontal() < vetor_cobras[i].get_x_atual() || 0 > vetor_cobras[i].get_x_atual()){
-                vetor_cobras[i].set_vx(0);
-                morreu(i);
-            }
-            for (int j = 1; j < vetor_cobras[i].get_cobrinha_horizontal().size(); j++) {
-                if (vetor_cobras[i].get_x_atual() == vetor_cobras[i].get_cobrinha_horizontal()[j]) {
-                    if (vetor_cobras[i].get_y_atual() == vetor_cobras[i].get_cobrinha_vertical()[j]) {
-                        morreu(i);
+        if(vetor_cobras[i].get_vida() == 1) {
+            if((tabuleiro->get_tabuleiro_vertical()-tabuleiro->get_bloco_vertical()) < vetor_cobras[i].get_y_atual() || 0 > vetor_cobras[i].get_y_atual()){
+                    vetor_cobras[i].set_vy(0);    
+                    morreu(i);
+                }
+                if(tabuleiro->get_tabuleiro_horizontal()-tabuleiro->get_bloco_horizontal() < vetor_cobras[i].get_x_atual() || 0 > vetor_cobras[i].get_x_atual()){
+                    vetor_cobras[i].set_vx(0);
+                    morreu(i);
+                }
+                for (int j = 1; j < vetor_cobras[i].get_cobrinha_horizontal().size(); j++) {
+                    if (vetor_cobras[i].get_x_atual() == vetor_cobras[i].get_cobrinha_horizontal()[j]) {
+                        if (vetor_cobras[i].get_y_atual() == vetor_cobras[i].get_cobrinha_vertical()[j]) {
+                            morreu(i);
+                        }
+                    }
+                }
+                for(int j = i+1; j < vetor_cobras.size(); j++) {
+                    for(int k = 0; k < vetor_cobras[i].get_cobrinha_horizontal().size(); k++) {
+                        if (vetor_cobras[i].get_x_atual() == vetor_cobras[j].get_cobrinha_horizontal()[k]) {
+                        if (vetor_cobras[i].get_y_atual() == vetor_cobras[j].get_cobrinha_vertical()[k]) {
+                                morreu(i);
+                                morreu(j);
+                            }
+                        }
                     }
                 }
             }
             comeu();
     }
     
-
 }
 
 /** @brief verifica se a cobrinha comeu a fruta */ 
@@ -147,6 +158,6 @@ void Controller::morreu(int index) {
     vetor_cobras[index].set_vx(0);
     vetor_cobras[index].set_vy(0);
     vetor_cobras[index].set_vida(0);
-    std::cout<<"GAME OVER"<<std::endl;
+    std::cout<<"GAME OVER PLAYER "<<index+1<<std::endl;
     //exit(0);
 }

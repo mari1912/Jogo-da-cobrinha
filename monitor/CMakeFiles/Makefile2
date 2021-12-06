@@ -302,13 +302,13 @@ CMakeFiles/cobra.dir/clean:
 # Target rules for target CMakeFiles/MeuJogo.dir
 
 # All Build rule for target.
-CMakeFiles/MeuJogo.dir/all: CMakeFiles/view.dir/all
-CMakeFiles/MeuJogo.dir/all: CMakeFiles/tabuleiro.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/fruta.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/cobra.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/receptor.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/controller.dir/all
 CMakeFiles/MeuJogo.dir/all: CMakeFiles/teclado.dir/all
+CMakeFiles/MeuJogo.dir/all: CMakeFiles/view.dir/all
+CMakeFiles/MeuJogo.dir/all: CMakeFiles/tabuleiro.dir/all
 	$(MAKE) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/depend
 	$(MAKE) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles --progress-num=1,2 "Built target MeuJogo"
