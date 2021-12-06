@@ -41,10 +41,9 @@ int main() {
     int pos = 0;
     int num_jogadores;
     std::ifstream f;
-    std::shared_ptr<Cobra>cobra(new Cobra(0,0,0,0));
     std::shared_ptr<Tabuleiro>tabuleiro(new Tabuleiro());
     std::shared_ptr<Fruta>fruta(new Fruta(tabuleiro));
-    std::shared_ptr<Teclado>teclado(new Teclado(fruta));
+    std::shared_ptr<Teclado>teclado(new Teclado());
     std::shared_ptr<Controller>controller(new Controller(tabuleiro, fruta, teclado));
     std::shared_ptr<View>view(new View(fruta, tabuleiro));
     std::shared_ptr<Receptor>r(new Receptor(fruta));
@@ -55,10 +54,7 @@ int main() {
     for(int i = 0; i < num_jogadores; i++) {
         r->conecta();
     }
-/*
-    for (int i = 0; i < vetor_endereco.size(); i++) {
-        std::cout<<vetor_endereco[i]<<std::endl;
-    }*/
+
 
     r->primeiro_envio();
 

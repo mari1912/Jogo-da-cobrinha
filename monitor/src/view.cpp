@@ -38,7 +38,7 @@ View::View( std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){
     }
 }
 
- void View::render() {
+ void View::render(int numero_cobras) {
     SDL_Rect bloco;
     bloco.w = SCREEN_WIDTH / BLOCK_WIDTH;
     bloco.h = SCREEN_HEIGHT / BLOCK_HEIGHT;
@@ -48,7 +48,8 @@ View::View( std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){
     SDL_SetRenderDrawColor(renderer, 0x0A, 0x0A, 0x0A, 0xFF);
     SDL_RenderClear (renderer);
 
-   for ( int i =0; i < vetor_cobras.size(); i++){
+   for ( int i =0; i < numero_cobras; i++){
+
         if(vetor_cobras[i].get_vida() == 1) {
             if(i == 0){
                 SDL_SetRenderDrawColor (renderer, 0x22, 0x8b, 0x22, 0xFF); // cobra verde

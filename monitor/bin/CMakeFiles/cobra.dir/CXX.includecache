@@ -334,11 +334,11 @@ utility
 vector
 -
 
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/cobra.cpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/cobra.cpp
 cobra.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/cobra.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/cobra.hpp
 json.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/json.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/json.hpp
 fstream
 -
 iostream

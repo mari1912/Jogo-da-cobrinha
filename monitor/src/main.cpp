@@ -38,6 +38,7 @@ int main() {
     json tec;
     json j;
     int indice;
+    int numero_cobras;
     std::string dados_enviados;
     std::ifstream f;
     std::shared_ptr<Tabuleiro>tabuleiro(new Tabuleiro());
@@ -93,6 +94,8 @@ int main() {
 
     fruta->set_x_fruta(j["fruta"]["x_fruta"]);
     fruta->set_y_fruta(j["fruta"]["y_fruta"]);
+    numero_cobras = j["ncobras"];
+  
 
     std::cout << "Conectado" << std::endl;
     while(rodando) {
@@ -140,7 +143,7 @@ int main() {
         fruta->set_x_fruta(j["fruta"]["x_fruta"]);
         fruta->set_y_fruta(j["fruta"]["y_fruta"]);
         
-        view->render();
+        view->render(numero_cobras);
         
     }   
 

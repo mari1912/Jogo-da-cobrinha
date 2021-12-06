@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha
+CMAKE_SOURCE_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin
+CMAKE_BINARY_DIR = /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/teclado.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/teclado.dir/flags.make
 
 CMakeFiles/teclado.dir/src/teclado.cpp.o: CMakeFiles/teclado.dir/flags.make
 CMakeFiles/teclado.dir/src/teclado.cpp.o: ../src/teclado.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/teclado.dir/src/teclado.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/teclado.dir/src/teclado.cpp.o -c /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/teclado.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/teclado.dir/src/teclado.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/teclado.dir/src/teclado.cpp.o -c /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/teclado.cpp
 
 CMakeFiles/teclado.dir/src/teclado.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/teclado.dir/src/teclado.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/teclado.cpp > CMakeFiles/teclado.dir/src/teclado.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/teclado.cpp > CMakeFiles/teclado.dir/src/teclado.cpp.i
 
 CMakeFiles/teclado.dir/src/teclado.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/teclado.dir/src/teclado.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/teclado.cpp -o CMakeFiles/teclado.dir/src/teclado.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/teclado.cpp -o CMakeFiles/teclado.dir/src/teclado.cpp.s
 
 # Object files for target teclado
 teclado_OBJECTS = \
@@ -80,7 +80,7 @@ teclado_EXTERNAL_OBJECTS =
 libteclado.a: CMakeFiles/teclado.dir/src/teclado.cpp.o
 libteclado.a: CMakeFiles/teclado.dir/build.make
 libteclado.a: CMakeFiles/teclado.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libteclado.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libteclado.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/teclado.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/teclado.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/teclado.dir/clean:
 .PHONY : CMakeFiles/teclado.dir/clean
 
 CMakeFiles/teclado.dir/depend:
-	cd /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mariana/Documentos/ea872/Jogo-da-cobrinha /home/mariana/Documentos/ea872/Jogo-da-cobrinha /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin /home/mariana/Documentos/ea872/Jogo-da-cobrinha/bin/CMakeFiles/teclado.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin /home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/bin/CMakeFiles/teclado.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/teclado.dir/depend
 

@@ -12,15 +12,12 @@ extern std::vector<udp::endpoint> vetor_endereco;
 extern std::vector<Cobra> vetor_cobras;
 class Receptor {
     private:
-        int i;
-       
         std::shared_ptr<Fruta>fruta;
         
     public:
         Receptor(std::shared_ptr<Fruta>fruta);
-        int get_i();
         void recebe();
         void conecta();
         void primeiro_envio();
-        void set_i(int novo_i);
+
 };

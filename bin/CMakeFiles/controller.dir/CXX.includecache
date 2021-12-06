@@ -377,16 +377,8 @@ boost/asio.hpp
 ../include/teclado.hpp
 SDL2/SDL.h
 -
-cobra.hpp
-../include/cobra.hpp
-memory
--
-fruta.hpp
-../include/fruta.hpp
-vector
--
 
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.cpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/controller.cpp
 memory
 -
 iostream
@@ -396,9 +388,9 @@ vector
 cstdlib
 -
 controller.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/controller.hpp
 json.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/json.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/json.hpp
 receptor.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/receptor.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/src/receptor.hpp
 

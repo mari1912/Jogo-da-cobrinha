@@ -368,7 +368,7 @@ SDL2/SDL_image.h
 vector
 -
 
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/main.cpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/main.cpp
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
@@ -380,17 +380,17 @@ memory
 boost/asio.hpp
 -
 cobra.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/cobra.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/cobra.hpp
 fruta.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/fruta.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/fruta.hpp
 tabuleiro.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/tabuleiro.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/tabuleiro.hpp
 view.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/view.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/view.hpp
 json.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/json.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/json.hpp
 teclado.hpp
-/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/src/teclado.hpp
+/home/daniele/comp/ea872/jogodacobrinha/Jogo-da-cobrinha/monitor/src/teclado.hpp
 fstream
 -
 sstream

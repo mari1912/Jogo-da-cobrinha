@@ -1,5 +1,4 @@
 #include "receptor.hpp"
-#include <fstream>
 #include <sstream>
 #include <boost/asio.hpp>
 #include "json.hpp"
@@ -11,7 +10,6 @@ using nlohmann::json;
 std::vector<udp::endpoint> vetor_endereco;
 
 Receptor::Receptor(std::shared_ptr<Fruta>fruta) {
-    i = 0;
     this->fruta = fruta;
 }
 
@@ -78,6 +76,7 @@ void Receptor::primeiro_envio() {
     std::string mensagem_dados;
 
     for (int indice = 0; indice < vetor_endereco.size(); indice++) {
+        enviar["ncobras"] = vetor_cobras.size();
         enviar["indice"] = indice;
         enviar["cobra"][indice]["vx"] = vetor_cobras[indice].get_vx();
         enviar["cobra"][indice]["vy"] = vetor_cobras[indice].get_vy();
@@ -90,10 +89,8 @@ void Receptor::primeiro_envio() {
 
         enviar["fruta"]["x_fruta"] = fruta->get_x_fruta();
         enviar["fruta"]["y_fruta"] = fruta->get_y_fruta();
-        //enviar["rodando"] = rodando;
-
         mensagem_dados = enviar.dump();
-        my_socket.send_to(boost::asio::buffer(mensagem_dados), vetor_endereco[i]);
+        my_socket.send_to(boost::asio::buffer(mensagem_dados), vetor_endereco[indice]);
     }
 }
 
@@ -144,8 +141,6 @@ void Receptor::recebe() {
 
             enviar["fruta"]["x_fruta"] = fruta->get_x_fruta();
             enviar["fruta"]["y_fruta"] = fruta->get_y_fruta();
-            enviar["rodando"] = rodando;
-
             mensagem_dados = enviar.dump();
             my_socket.send_to(boost::asio::buffer(mensagem_dados), vetor_endereco[i]);
         }
@@ -153,12 +148,4 @@ void Receptor::recebe() {
 
     }
 
-}
-
-int Receptor::get_i() {
-    return i;
-}
-
-void Receptor::set_i(int novo_i) {
-    i = novo_i;
 }

@@ -23,5 +23,5 @@ class View {
   public:
     View(std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro); //construtor
     void finaliza();                                                                                     //finaliza o jogo (as imagens do jogo fecham)
-    void render();                                                                                       //monstra as imagens na tela
+    void render(int numero_cobras);                                                                                       //monstra as imagens na tela
 };
