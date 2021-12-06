@@ -14,9 +14,8 @@ class Teclado {
         const int baixo = -1;
         const int direita = 2;
         const int esquerda = -2;
-        std::shared_ptr<Cobra>cobra;
         std::shared_ptr<Fruta>fruta;
     public:
-        Teclado(std::shared_ptr<Cobra>cobra,std::shared_ptr<Fruta>fruta);
+        Teclado(std::shared_ptr<Fruta>fruta);
         int le_teclado();
 };

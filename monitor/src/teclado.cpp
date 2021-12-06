@@ -4,10 +4,9 @@
  * @brief  funcao que recebe os comandos do teclado
  */ 
 
-Teclado::Teclado(std::shared_ptr<Cobra>cobra,std::shared_ptr<Fruta>fruta) {
+Teclado::Teclado(std::shared_ptr<Fruta>fruta) {
     state = SDL_GetKeyboardState(nullptr);
     seta = 0;
-    this->cobra =  cobra;
     this->fruta = fruta;
     
 }

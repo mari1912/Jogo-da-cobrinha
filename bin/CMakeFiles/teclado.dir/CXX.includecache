@@ -16,6 +16,22 @@ tabuleiro.hpp
 memory
 -
 
+../include/receptor.hpp
+memory
+-
+cobra.hpp
+../include/cobra.hpp
+fruta.hpp
+../include/fruta.hpp
+teclado.hpp
+../include/teclado.hpp
+vector
+-
+fstream
+-
+boost/asio.hpp
+-
+
 ../include/tabuleiro.hpp
 
 ../include/teclado.hpp
@@ -27,8 +43,12 @@ memory
 -
 fruta.hpp
 ../include/fruta.hpp
+vector
+-
 
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/teclado.cpp
 teclado.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/teclado.hpp
+receptor.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/receptor.hpp
 

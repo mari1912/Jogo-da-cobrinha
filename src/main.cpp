@@ -14,10 +14,11 @@
 #include "json.hpp"
 #include <thread>
 #include "receptor.hpp"
+#include <vector>
 
 using boost::asio::ip::udp;
 using nlohmann::json;
-
+std::vector<Cobra> vetor_cobras;
 /**
  * @brief Jogo da Cobrinha desenvolvido para a disciplina EA872
  * @author Mariana Sartorato Jorge
@@ -38,21 +39,37 @@ int main() {
     json enviar;
     char tecla[1000];
     int pos = 0;
+    int num_jogadores;
     std::ifstream f;
     std::shared_ptr<Cobra>cobra(new Cobra(0,0,0,0));
     std::shared_ptr<Tabuleiro>tabuleiro(new Tabuleiro());
     std::shared_ptr<Fruta>fruta(new Fruta(tabuleiro));
-    std::shared_ptr<Teclado>teclado(new Teclado(cobra,fruta));
-    std::shared_ptr<Controller>controller(new Controller(tabuleiro, cobra, fruta, teclado));
-    std::shared_ptr<View>view(new View(cobra, fruta, tabuleiro));
-    std::shared_ptr<Receptor>r(new Receptor(cobra, fruta));
-    std::thread t1(&Receptor::recebe, r);
+    std::shared_ptr<Teclado>teclado(new Teclado(fruta));
+    std::shared_ptr<Controller>controller(new Controller(tabuleiro, fruta, teclado));
+    std::shared_ptr<View>view(new View(fruta, tabuleiro));
+    std::shared_ptr<Receptor>r(new Receptor(fruta));
+    
+    std::cout << "Digite o numero de jogadores:";
+    std::cin >> num_jogadores;
+
+    for(int i = 0; i < num_jogadores; i++) {
+        r->conecta();
+    }
+/*
+    for (int i = 0; i < vetor_endereco.size(); i++) {
+        std::cout<<vetor_endereco[i]<<std::endl;
+    }*/
+
+    r->primeiro_envio();
+
+   std::thread t1(&Receptor::recebe, r);
+
 
     while(rodando) {
 
         //espera que a tecla espaco seja apertada antes de iniciar o jogo
         teclado->inicia_jogo();
-        
+
         //caso o usuario feche a janela do jogo
         while (SDL_PollEvent(&evento)) {
             if (evento.type == SDL_QUIT) {
@@ -61,14 +78,24 @@ int main() {
         }
 
         //se a cobra morrer
-        if(cobra->get_vida() == 0) {
+        int cobras_vivas = 0;
+        for (int i = 0; i < vetor_cobras.size();i++){
+            if(vetor_cobras[i].get_vida() == 1){
+                 cobras_vivas = cobras_vivas +1 ;
+            }
+
+        }
+
+        if(cobras_vivas == 0){
             rodando = false;
         }
+        
 
         //se o jogo estiver iniciado, o controller o executa
         if(teclado->get_iniciar() == 1) {
-        
-            controller->muda_posicao(cobra->get_direcao());
+            for(int i=0; i<num_jogadores; i++) {
+                controller->muda_posicao(vetor_cobras[i].get_direcao(),i);
+            }
             controller->calcula_x_cobrinha();
             controller->calcula_y_cobrinha();
             controller->verifica_posicao();

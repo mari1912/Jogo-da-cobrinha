@@ -6,5 +6,6 @@ CMakeFiles/receptor.dir/src/receptor.cpp.o: ../include/fruta.hpp
 CMakeFiles/receptor.dir/src/receptor.cpp.o: ../include/json.hpp
 CMakeFiles/receptor.dir/src/receptor.cpp.o: ../include/receptor.hpp
 CMakeFiles/receptor.dir/src/receptor.cpp.o: ../include/tabuleiro.hpp
+CMakeFiles/receptor.dir/src/receptor.cpp.o: ../include/teclado.hpp
 CMakeFiles/receptor.dir/src/receptor.cpp.o: ../src/receptor.cpp
 

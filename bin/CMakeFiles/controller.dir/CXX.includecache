@@ -23,6 +23,8 @@ SDL2/SDL.h
 -
 SDL2/SDL_image.h
 -
+vector
+-
 
 ../include/fruta.hpp
 tabuleiro.hpp
@@ -354,6 +356,22 @@ utility
 vector
 -
 
+../include/receptor.hpp
+memory
+-
+cobra.hpp
+../include/cobra.hpp
+fruta.hpp
+../include/fruta.hpp
+teclado.hpp
+../include/teclado.hpp
+vector
+-
+fstream
+-
+boost/asio.hpp
+-
+
 ../include/tabuleiro.hpp
 
 ../include/teclado.hpp
@@ -365,6 +383,8 @@ memory
 -
 fruta.hpp
 ../include/fruta.hpp
+vector
+-
 
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.cpp
 memory
@@ -379,4 +399,6 @@ controller.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/controller.hpp
 json.hpp
 /home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/json.hpp
+receptor.hpp
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/src/receptor.hpp
 

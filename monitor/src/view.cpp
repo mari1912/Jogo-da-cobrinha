@@ -1,9 +1,10 @@
 #include <iostream>
 #include "view.hpp"
 
+
 /** @brief Construtor */ 
-View::View(std::shared_ptr<Cobra>cobra, std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){ 
-    this->cobra = cobra;
+View::View( std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){ 
+
     this->fruta = fruta;
     this->tabuleiro = tabuleiro;
 
@@ -37,7 +38,7 @@ View::View(std::shared_ptr<Cobra>cobra, std::shared_ptr<Fruta>fruta, std::shared
     }
 }
 
-void View::render() {
+ void View::render() {
     SDL_Rect bloco;
     bloco.w = SCREEN_WIDTH / BLOCK_WIDTH;
     bloco.h = SCREEN_HEIGHT / BLOCK_HEIGHT;
@@ -47,12 +48,29 @@ void View::render() {
     SDL_SetRenderDrawColor(renderer, 0x0A, 0x0A, 0x0A, 0xFF);
     SDL_RenderClear (renderer);
 
-    SDL_SetRenderDrawColor (renderer, 0x22, 0x8b, 0x22, 0xFF);
-    for (int i = 0; i < cobra->get_cobrinha_horizontal().size(); i++) {
-        bloco.x = cobra->get_cobrinha_horizontal()[i];
-        bloco.y = cobra->get_cobrinha_vertical()[i];
-        SDL_RenderFillRect(renderer, &bloco);
+   for ( int i =0; i < vetor_cobras.size(); i++){
+        if(vetor_cobras[i].get_vida() == 1) {
+            if(i == 0){
+                SDL_SetRenderDrawColor (renderer, 0x22, 0x8b, 0x22, 0xFF); // cobra verde
+            }
+            
+            else if( i ==1){
+                SDL_SetRenderDrawColor (renderer, 0x99, 0xFF, 0xFF, 0xFF); // cobra verde piscina 
+            }
+            else if( i == 2 ){
+                SDL_SetRenderDrawColor (renderer, 0x99, 0x00, 0x99, 0xFF); // cobra roxo
+            }
+            else if( i == 3 ){
+                SDL_SetRenderDrawColor (renderer, 0xFF, 0xFF, 0x00, 0xFF); // cobra amarela
+            }
+            for (int j = 0; j < vetor_cobras[i].get_cobrinha_horizontal().size(); j++) {
+                bloco.x = vetor_cobras[i].get_cobrinha_horizontal()[j];
+                bloco.y = vetor_cobras[i].get_cobrinha_vertical()[j];
+                SDL_RenderFillRect(renderer, &bloco);
+            }
+        }
     }
+   
 
     /* ! Desenha a fruta */ 
     SDL_SetRenderDrawColor(renderer, 0xFF, 0x2F, 0x4E, 0xFF);

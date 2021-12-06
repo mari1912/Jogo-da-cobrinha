@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcobra.a  CMakeFiles/cobra.dir/src/cobra.cpp.o
+/usr/bin/ranlib libcobra.a

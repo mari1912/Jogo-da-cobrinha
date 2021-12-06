@@ -8,16 +8,99 @@
 
 using boost::asio::ip::udp;
 using nlohmann::json;
+std::vector<udp::endpoint> vetor_endereco;
 
-Receptor::Receptor(std::shared_ptr<Cobra>cobra,std::shared_ptr<Fruta>fruta) {
+Receptor::Receptor(std::shared_ptr<Fruta>fruta) {
     i = 0;
-    this->cobra = cobra;
     this->fruta = fruta;
+}
+
+void Receptor::conecta() {
+    Cobra cobra1(0,0,0,0);
+    Cobra cobra2(43*19,0,0,0);
+    Cobra cobra3(0,0,32*19,0);
+    Cobra cobra4(43*19,0,32*19,0);
+ 
+    char v[120];
+
+    boost::asio::io_service my_io_service; // Conecta com o SO
+
+    udp::endpoint local_endpoint(udp::v4(), 9001); // endpoint: contem
+                                                    // conf. da conexao (ip/port)
+
+    udp::socket my_socket(my_io_service, // io service
+                            local_endpoint); // endpoint
+
+    udp::endpoint remote_endpoint; // vai conter informacoes de quem conectar
+
+
+    my_socket.receive_from(boost::asio::buffer(v,120), // Local do buffer
+                        remote_endpoint); // Confs. do Cliente
+
+    std::cout << v << std::endl;
+    std::cout << "Fim de mensagem!" << std::endl;
+
+
+    // Respondendo a mensagem
+    std::string msg("Recebido! Obrigado, cambio e desligo!");
+    my_socket.send_to(boost::asio::buffer(msg), remote_endpoint);
+
+    std::cout << "Mensagem de retorno enviada" << std::endl;
+
+    if(vetor_endereco.size() == 0){
+        vetor_endereco.push_back(remote_endpoint);
+        vetor_cobras.push_back(cobra1);
+    }
+    else if(vetor_endereco.size() == 1 && remote_endpoint != vetor_endereco[0]){
+        vetor_endereco.push_back(remote_endpoint);
+        vetor_cobras.push_back(cobra2);
+    }
+    else if(vetor_endereco.size() == 2 && remote_endpoint != vetor_endereco[0] && remote_endpoint != vetor_endereco[1]){
+        vetor_endereco.push_back(remote_endpoint);
+        vetor_cobras.push_back(cobra3);
+    }
+    else if(vetor_endereco.size() == 3 && remote_endpoint != vetor_endereco[0] && remote_endpoint != vetor_endereco[1] && remote_endpoint != vetor_endereco[2]){
+        vetor_endereco.push_back(remote_endpoint);
+        vetor_cobras.push_back(cobra4);
+    }
+}
+
+void Receptor::primeiro_envio() {
+    boost::asio::io_service my_io_service; // Conecta com o SO
+
+    udp::endpoint local_endpoint(udp::v4(), 9001); // endpoint: contem
+                                                        // conf. da conexao (ip/port)
+
+    udp::socket my_socket(my_io_service, // io service
+                                local_endpoint); // endpoint
+
+    json enviar;
+    std::string mensagem_dados;
+
+    for (int indice = 0; indice < vetor_endereco.size(); indice++) {
+        enviar["indice"] = indice;
+        enviar["cobra"][indice]["vx"] = vetor_cobras[indice].get_vx();
+        enviar["cobra"][indice]["vy"] = vetor_cobras[indice].get_vy();
+        enviar["cobra"][indice]["x_atual"] = vetor_cobras[indice].get_x_atual();
+        enviar["cobra"][indice]["y_atual"] = vetor_cobras[indice].get_y_atual();
+        enviar["cobra"][indice]["horizontal"] = vetor_cobras[indice].get_cobrinha_horizontal();
+        enviar["cobra"][indice]["vertical"] = vetor_cobras[indice].get_cobrinha_vertical();
+        enviar["cobra"][indice]["tamanho"] = (vetor_cobras[indice].get_cobrinha_vertical()).size(); 
+        enviar["cobra"][indice]["vida"] = vetor_cobras[indice].get_vida();
+
+        enviar["fruta"]["x_fruta"] = fruta->get_x_fruta();
+        enviar["fruta"]["y_fruta"] = fruta->get_y_fruta();
+        //enviar["rodando"] = rodando;
+
+        mensagem_dados = enviar.dump();
+        my_socket.send_to(boost::asio::buffer(mensagem_dados), vetor_endereco[i]);
+    }
 }
 
 void Receptor::recebe() {
     char tecla[1000];
     bool rodando = 1;
+    int indice = 0;
     json recebido;
     json enviar;
     std::string mensagem_dados;
@@ -31,33 +114,44 @@ void Receptor::recebe() {
 
     udp::endpoint remote_endpoint; // vai conter informacoes de quem conectar
 
+
+
     while (rodando) {
         my_socket.receive_from(boost::asio::buffer(tecla,1000), // Local do buffer
                         remote_endpoint); // Confs. do Cliente
         
         std::stringstream(tecla) >> recebido;
-        //std::cout<<recebido["tecla"]<<std::endl;
+
+        for(int i=0; i<vetor_endereco.size(); i++) {
+            if(vetor_endereco[i] == remote_endpoint) {
+                indice = i;
+            }
+        }
         
-        cobra->set_direcao(recebido["tecla"]);
+        vetor_cobras[indice].set_direcao(recebido["tecla"]);
     
-        enviar["cobra"]["vx"] = cobra->get_vx();
-        enviar["cobra"]["vy"] = cobra->get_vy();
-        enviar["cobra"]["x_atual"] = cobra->get_x_atual();
-        enviar["cobra"]["y_atual"] = cobra->get_y_atual();
-        enviar["cobra"]["horizontal"] = cobra->get_cobrinha_horizontal();
-        enviar["cobra"]["vertical"] = cobra->get_cobrinha_vertical();
-        enviar["cobra"]["tamanho"] = (cobra->get_cobrinha_vertical()).size(); 
-        enviar["cobra"]["vida"] = cobra->get_vida();
+        for ( int i =0; i < vetor_cobras.size();i++){
+           
+            enviar["indice"] = indice;
+            enviar["cobra"][indice]["vx"] = vetor_cobras[indice].get_vx();
+            enviar["cobra"][indice]["vy"] = vetor_cobras[indice].get_vy();
+            enviar["cobra"][indice]["x_atual"] = vetor_cobras[indice].get_x_atual();
+            enviar["cobra"][indice]["y_atual"] = vetor_cobras[indice].get_y_atual();
+            enviar["cobra"][indice]["horizontal"] = vetor_cobras[indice].get_cobrinha_horizontal();
+            enviar["cobra"][indice]["vertical"] = vetor_cobras[indice].get_cobrinha_vertical();
+            enviar["cobra"][indice]["tamanho"] = (vetor_cobras[indice].get_cobrinha_vertical()).size(); 
+            enviar["cobra"][indice]["vida"] = vetor_cobras[indice].get_vida();
 
-        enviar["fruta"]["x_fruta"] = fruta->get_x_fruta();
-        enviar["fruta"]["y_fruta"] = fruta->get_y_fruta();
-        enviar["rodando"] = rodando;
+            enviar["fruta"]["x_fruta"] = fruta->get_x_fruta();
+            enviar["fruta"]["y_fruta"] = fruta->get_y_fruta();
+            enviar["rodando"] = rodando;
 
-        mensagem_dados = enviar.dump();
-        my_socket.send_to(boost::asio::buffer(mensagem_dados), remote_endpoint);
+            mensagem_dados = enviar.dump();
+            my_socket.send_to(boost::asio::buffer(mensagem_dados), vetor_endereco[i]);
+        }
+         
 
     }
-    i = 1;
 
 }
 

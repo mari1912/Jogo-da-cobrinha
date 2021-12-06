@@ -1,0 +1,11 @@
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/rebuild_cache.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/doc.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/edit_cache.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/receptor.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/controller.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/teclado.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/view.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/tabuleiro.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/fruta.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/cobra.dir
+/home/mariana/Documentos/ea872/Jogo-da-cobrinha/monitor/CMakeFiles/MeuJogo.dir
