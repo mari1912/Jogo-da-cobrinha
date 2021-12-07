@@ -4,7 +4,15 @@
 #include <iostream>
 
 using nlohmann::json;
-/** @brief Construtor */ 
+
+/**
+ * @brief Construct a new Cobra:: Cobra object
+ * 
+ * @param x_atual 
+ * @param vx 
+ * @param y_atual 
+ * @param vy 
+ */
 Cobra::Cobra(int x_atual, float vx, int y_atual, float vy) {
     this->x_atual = x_atual;
     this->vx = vx;
@@ -43,43 +51,92 @@ int Cobra::get_vida() {
     return vida;
 }
 
+/**
+ * @brief permite atualizar valores da cobrinha na horizontal
+ * 
+ * @return std::vector<int> 
+ */
 std::vector<int> Cobra::get_cobrinha_horizontal() {
     return cobrinha_horizontal;
 }
 
+/**
+ * @brief permite atualizar valores da cobrinha na vertical
+ * 
+ * @return std::vector<int> 
+ */
 std::vector<int> Cobra::get_cobrinha_vertical() {
     return cobrinha_vertical;
 }
 
-/* ! permite atualizar os atributos */ 
+/**
+ * @brief  atualiza valores de x 
+ * 
+ * @param x_novo 
+ */
 void Cobra::set_x_atual(int x_novo) {
     x_atual = x_novo;
 }
+
+/**
+ * @brief atualiza valores de vx
+ * 
+ * @param vx_novo 
+ */
 
 void Cobra::set_vx(float vx_novo) {
     vx = vx_novo;
 }
 
+/**
+ * @brief atualiza valores de y
+ * 
+ * @param y_novo 
+ */
 void Cobra::set_y_atual(int y_novo) {
     y_atual = y_novo;
 }
 
+/**
+ * @brief atualiza valores de vy
+ * 
+ * @param vy_novo 
+ */
 void Cobra::set_vy(float vy_novo) {
     vy = vy_novo;
 }
 
+/**
+ * @brief atualiza valores da cobrinha na vertical
+ * 
+ * @param vect 
+ */
 void Cobra::set_cobrinha_vertical(std::vector<int> vect) {
     cobrinha_vertical = vect;
 }
 
+/**
+ * @brief atualiza valores da cobrinha na horizontal 
+ * 
+ * @param vect 
+ */
 void Cobra::set_cobrinha_horizontal(std::vector<int> vect) {
     cobrinha_horizontal = vect;
 }
 
+/**
+ * @brief atualiza valor da vida 
+ * 
+ * @param vida_nova 
+ */
 void Cobra::set_vida(int vida_nova) {
     vida = vida_nova;
 }
 
+/**
+ * @brief permite salvar o estado do jogo
+ * 
+ */
 void Cobra::salvar_jogo(){
     // copiando 
     json j;
@@ -97,6 +154,10 @@ void Cobra::salvar_jogo(){
     f2.close(); 
 }
 
+/**
+ * @brief permite recuperar o estado do jogo
+ * 
+ */
 void Cobra:: recuperar_jogo(){
     json j2;
     int tam;

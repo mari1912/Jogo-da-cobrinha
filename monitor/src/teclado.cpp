@@ -1,8 +1,9 @@
 #include "teclado.hpp"
 
 /**
- * @brief  funcao que recebe os comandos do teclado
- */ 
+ * @brief Construct a new Teclado:: Teclado object
+ * 
+ */
 
 Teclado::Teclado(std::shared_ptr<Fruta>fruta) {
     state = SDL_GetKeyboardState(nullptr);
@@ -12,6 +13,11 @@ Teclado::Teclado(std::shared_ptr<Fruta>fruta) {
 }
 
 
+/**
+ * @brief recebe os dados do teclado 
+ * 
+ * @return int 
+ */
 int Teclado::le_teclado() {
     /*! Polling de eventos */ 
     SDL_PumpEvents(); /*! atualiza estado do teclado */ 

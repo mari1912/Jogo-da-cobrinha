@@ -3,7 +3,10 @@
 #include "view.hpp"
 #include "receptor.hpp"
 
-/** @brief Construtor */ 
+/**
+ * @brief Construct a new View:: View object
+ * 
+ */
 View::View(std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){ 
     this->fruta = fruta;
     this->tabuleiro = tabuleiro;
@@ -38,6 +41,10 @@ View::View(std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){
     }
 }
 
+/**
+ * @brief renderiza as cobrinhas e fruta
+ * 
+ */
 void View::render() {
     SDL_Rect bloco;
     bloco.w = SCREEN_WIDTH / BLOCK_WIDTH;
@@ -78,9 +85,11 @@ void View::render() {
 
     SDL_RenderPresent(renderer); 
 } 
-
+/**
+ * @brief finaliza o jogo
+ * 
+ */
 void View::finaliza() {
-    //SDL_DestroyTexture(texture);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();

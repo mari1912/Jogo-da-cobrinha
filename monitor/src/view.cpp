@@ -2,7 +2,10 @@
 #include "view.hpp"
 
 
-/** @brief Construtor */ 
+/**
+ * @brief Construct a new View:: View object
+ * 
+ */
 View::View( std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){ 
 
     this->fruta = fruta;
@@ -38,6 +41,11 @@ View::View( std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){
     }
 }
 
+/**
+ * @brief renderiza cobras e frutas via sdl 
+ * 
+ * @param numero_cobras 
+ */
  void View::render(int numero_cobras) {
     SDL_Rect bloco;
     bloco.w = SCREEN_WIDTH / BLOCK_WIDTH;
@@ -82,6 +90,10 @@ View::View( std::shared_ptr<Fruta>fruta, std::shared_ptr<Tabuleiro>tabuleiro){
     SDL_RenderPresent(renderer); 
 } 
 
+/**
+ * @brief finaliza o jogo
+ * 
+ */
 void View::finaliza() {
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);

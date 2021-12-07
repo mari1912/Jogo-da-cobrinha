@@ -9,10 +9,19 @@ using boost::asio::ip::udp;
 using nlohmann::json;
 std::vector<udp::endpoint> vetor_endereco;
 
+/**
+ * @brief Construct a new Receptor:: Receptor object
+ * 
+ */
+
 Receptor::Receptor(std::shared_ptr<Fruta>fruta) {
     this->fruta = fruta;
 }
 
+/**
+ * @brief conecta os jogadores ( monitores) ao servidor 
+ * 
+ */
 void Receptor::conecta() {
     Cobra cobra1(0,0,0,0);
     Cobra cobra2(43*19,0,0,0);
@@ -63,6 +72,10 @@ void Receptor::conecta() {
     }
 }
 
+/**
+ * @brief faz o primeiro envio iniciando os jogadores com os dados iniciais 
+ * 
+ */
 void Receptor::primeiro_envio() {
     boost::asio::io_service my_io_service; // Conecta com o SO
 
@@ -94,6 +107,10 @@ void Receptor::primeiro_envio() {
     }
 }
 
+/**
+ * @brief recebe dados do servidor 
+ * 
+ */
 void Receptor::recebe() {
     char tecla[1000];
     bool rodando = 1;

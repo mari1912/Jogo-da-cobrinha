@@ -7,18 +7,25 @@
 #include "receptor.hpp"
 
 
+
 /**
-* @brief define o construtor */ 
+ * @brief Construct a new Controller:: Controller object
+ * 
+ */
 Controller::Controller(std::shared_ptr<Tabuleiro>tabuleiro, std::shared_ptr<Fruta>fruta, std::shared_ptr<Teclado>teclado) {
     this->tabuleiro = tabuleiro;
     this->fruta = fruta;
     this->teclado = teclado;
 }
 
-/** @brief faz a mundança de direcao da cobrinha */ 
+/**
+ * @brief  faz a mundança de direcao da cobrinha
+ * 
+ * @param pos 
+ * @param indice 
+ */
 void Controller::muda_posicao(int pos, int indice) {
-    //int pos = teclado->le_teclado();
-    
+   
     if (pos == 1) {
         vetor_cobras[indice].set_vy(-1);
         vetor_cobras[indice].set_vx(0);
@@ -39,7 +46,10 @@ void Controller::muda_posicao(int pos, int indice) {
     
 }
 
-/** @brief calcula a posicao horizontal da cobrinha */ 
+/**
+ * @brief calcula a posicao horizontal da cobrinha
+ * 
+ */
 void Controller::calcula_x_cobrinha() {
     for(int i = 0; i < vetor_cobras.size();i++){
         int x_cobrinha;
@@ -125,8 +135,11 @@ void Controller::posicao_fruta() {
     fruta->set_y_fruta(y);
 }
 
-
-/** @brief faz a cobrinha crescer */ 
+/**
+ * @brief faz a cobrinha crescer
+ * 
+ * @param index 
+ */
 void Controller::cresce(int index) {
     int x_ultimo, y_ultimo, fim_x, fim_y;
     fim_x = vetor_cobras[index].get_cobrinha_horizontal().back();
@@ -137,7 +150,11 @@ void Controller::cresce(int index) {
     vetor_cobras[index].set_cobrinha_aumento(x_ultimo, y_ultimo);
 }
 
-/** @brief faz a cobrinha andar */ 
+/**
+ * @brief faz a cobrinha andar
+ * 
+ * @param index 
+ */
 void Controller::anda(int index) {
     int tamanho = vetor_cobras[index].get_cobrinha_horizontal().size();
     
@@ -153,11 +170,15 @@ void Controller::anda(int index) {
     }
 }
 
-/** @brief faz a cobrinha morrer */ 
+/**
+ * @brief faz a cobrinha morrer
+ * 
+ * @param index 
+ */
 void Controller::morreu(int index) {
     vetor_cobras[index].set_vx(0);
     vetor_cobras[index].set_vy(0);
     vetor_cobras[index].set_vida(0);
     std::cout<<"GAME OVER PLAYER "<<index+1<<std::endl;
-    //exit(0);
+    
 }

@@ -6,7 +6,9 @@
 using nlohmann::json;
 
 /**
-* @brief define construtor   */
+ * @brief Construct a new Fruta:: Fruta object
+ * 
+ */
 Fruta::Fruta(std::shared_ptr<Tabuleiro>tabuleiro) {
     /* ! Posição inicial da frutinha */ 
     this->tabuleiro = tabuleiro;
@@ -27,17 +29,27 @@ int Fruta::get_y_fruta() {
 }
 
 /**
-* @brief permite atualizar os atributos x */
+ * @brief permite atualizar os atributos x
+ * 
+ * @param x_fruta_novo 
+ */
 void Fruta::set_x_fruta(int x_fruta_novo) {
     x_fruta = x_fruta_novo;
 }
 
 /**
-* @brief permite atualizar os atributos y */
+ * @brief permite atualizar os atributos y
+ * 
+ * @param y_fruta_novo 
+ */
 void Fruta::set_y_fruta(int y_fruta_novo) {
     y_fruta = y_fruta_novo;
 }
 
+/**
+ * @brief salva os dados da fruta no jogo
+ * 
+ */
 void Fruta::salvar_jogo_fruta(){
     json j;
     j["fruta"]["x_fruta"] = x_fruta;
@@ -49,6 +61,10 @@ void Fruta::salvar_jogo_fruta(){
 
 }
 
+/**
+ * @brief recupera os dados da fruta no jogo
+ * 
+ */
 void Fruta::recuperar_jogo_fruta(){
     json j2;
     int var;

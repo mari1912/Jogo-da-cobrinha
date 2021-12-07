@@ -9,14 +9,21 @@ Teclado::Teclado() {
     iniciar = 0;  
 }
 
-//Verifica se a tecla espaco foi apertada
+/**
+ * @brief Verifica se a tecla espaco foi apertada
+ * 
+ */
 void Teclado::inicia_jogo() {
     if(state[SDL_SCANCODE_SPACE]) {
         iniciar = 1;
     }
 }
 
-//Retorna a variavel iniciar, para indicar se o jogo ja foi iniciado
+/**
+ * @brief Retorna a variavel iniciar, para indicar se o jogo ja foi iniciado
+ * 
+ * @return int 
+ */
 int Teclado::get_iniciar() {
     return iniciar;
 }

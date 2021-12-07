@@ -19,12 +19,13 @@
 using boost::asio::ip::udp;
 using nlohmann::json;
 std::vector<Cobra> vetor_cobras;
+
 /**
  * @brief Jogo da Cobrinha desenvolvido para a disciplina EA872
  * @author Mariana Sartorato Jorge
  * @author Daniele Souza Gonçalves 
- * @date 05/10/2021
- * @version 1.0 
+ * @date 06/12/2021
+ * @version 2.0 
  */
 
 /**
